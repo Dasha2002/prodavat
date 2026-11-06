@@ -1,0 +1,10 @@
+{
+  "name": "prodavat-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Статическая вёрстка proДАВАТЬ под интеграцию с CMS",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  }
+}

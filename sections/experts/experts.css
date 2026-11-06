@@ -1,0 +1,7 @@
+.experts{border-top:1px solid var(--line)}.experts__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.experts__photo img{width:100%;aspect-ratio:1.15;object-fit:cover;object-position:58% 50%}.experts__statement{font:32px/1.2 var(--display);letter-spacing:-.035em;margin-bottom:28px}.experts__statement em{font-style:normal;color:var(--accent)}.experts__text>p:not(.experts__statement){font-size:16px;color:var(--muted);margin-bottom:18px;max-width:430px}.experts__text .text-link{margin-top:18px}@media(max-width:900px){.experts__grid{gap:35px}.experts__statement{font-size:28px}}@media(max-width:560px){.experts__grid{grid-template-columns:1fr;gap:28px}.experts__photo img{aspect-ratio:1.2}.experts__statement{font-size:30px}}
+/* The copy follows the taller portrait only within this section. */
+@media(min-width:901px) and (min-height:700px){
+  .experts__grid{align-items:start}
+  .experts__photo img{height:auto;aspect-ratio:4/5;object-position:58% center}
+  .experts__text{position:sticky;top:126px;align-self:start;padding-block:12px}
+}
