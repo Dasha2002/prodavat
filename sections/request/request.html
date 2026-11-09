@@ -1,1 +1,67 @@
-<section class="request section" id="request"><div class="container request__grid"><div><p class="eyebrow">Следующий шаг</p><h2>Давайте разберёмся,<br>что нужно<br><em>вашему бизнесу.</em></h2><p class="request__lead">Расскажите о задаче. Обсудим, какой формат работы поможет её решить.</p><div class="request__meeting"><span>Стратегическая встреча</span><strong>30 минут · онлайн</strong><p>Платная встреча. Стоимость и время согласуем до записи.</p></div></div><form class="request__form" data-request-form><p class="request__caption">Начнём со знакомства</p><label>Как к вам обращаться<input name="name" autocomplete="name" required minlength="2" maxlength="100" placeholder="Ваше имя"></label><label>Телефон или email<input name="contact" autocomplete="email" required minlength="5" maxlength="120" placeholder="Как с вами связаться"></label><label>Что хотите изменить? <span>Необязательно</span><textarea name="message" rows="2" maxlength="3000" placeholder="Пара слов о вашей задаче"></textarea></label><label class="request__consent"><input type="checkbox" required name="consent"><span>Согласен(на) на обработку персональных данных. <a href="{{root}}politika/">Условия обработки</a></span></label><button class="button" type="submit">Подготовить обращение </button><p class="request__demo">Демонстрационная форма — отправка пока не подключена.</p><p class="request__status" role="status" aria-live="polite"></p><textarea class="request__output" data-request-output readonly hidden rows="5" aria-label="Подготовленное обращение"></textarea><button class="text-link" data-copy type="button" hidden>Скопировать обращение</button></form></div></section>
+<section class="request section" id="request">
+  <div class="container request__grid">
+    <div>
+      <p class="eyebrow">Следующий шаг</p>
+      <h2>Обсудим задачу<br /><em>вашего бизнеса</em></h2>
+      <p class="request__lead">
+        Оставьте номер телефона и кратко опишите задачу. Обсудим подходящий
+        формат работы.
+      </p>
+      <div class="request__meeting">
+        <span>Стратегическая встреча</span><strong>30 минут · онлайн</strong>
+        <p>Платная встреча. Стоимость и время согласуем до записи.</p>
+      </div>
+    </div>
+    <form class="request__form" data-request-form>
+      <p class="request__caption">Начнём со знакомства</p>
+      <label
+        >Как к вам обращаться<input
+          name="name"
+          autocomplete="name"
+          required
+          minlength="2"
+          maxlength="100"
+          placeholder="Ваше имя" /></label
+      ><label
+        >Номер телефона<input
+          type="tel"
+          name="contact"
+          autocomplete="tel"
+          inputmode="tel"
+          required
+          minlength="18"
+          placeholder="+7 (000) 000-00-00"
+          aria-describedby="phone-hint"
+      /></label>
+      <label
+        >Что хотите изменить? <span>Необязательно</span
+        ><textarea
+          name="message"
+          rows="2"
+          maxlength="3000"
+          placeholder="Пара слов о вашей задаче"
+        ></textarea></label
+      ><label class="request__consent"
+        ><input type="checkbox" required name="consent" /><span
+          >Согласен(на) на обработку персональных данных.
+          <a href="{{root}}politika/">Условия обработки</a></span
+        ></label
+      ><button class="button" type="submit">Подготовить обращение</button>
+      <p class="request__demo">
+        Демонстрационная форма — отправка пока не подключена.
+      </p>
+      <p class="request__status" role="status" aria-live="polite"></p>
+      <textarea
+        class="request__output"
+        data-request-output
+        readonly
+        hidden
+        rows="5"
+        aria-label="Подготовленное обращение"
+      ></textarea
+      ><button class="text-link" data-copy type="button" hidden>
+        Скопировать обращение
+      </button>
+    </form>
+  </div>
+</section>

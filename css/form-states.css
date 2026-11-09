@@ -1,0 +1,39 @@
+/* Filled fields retain their own treatment after focus leaves the control. */
+.request__form :is(input:not([type="checkbox"]),textarea):not(:placeholder-shown){
+  background-color:#30262bd9;
+  border-color:#b08b95;
+  color:#fff;
+  caret-color:#f4d4dc;
+}
+.request__form :is(input:not([type="checkbox"]),textarea):not(:placeholder-shown):hover{
+  background-color:#3a2c33;
+  border-color:#d1a6b1;
+}
+.request__form :is(input:not([type="checkbox"]),textarea):focus{
+  background-color:#3b2d35;
+  border-color:#ecc1cc;
+  outline:none;
+  box-shadow:none;
+}
+/* Keep browser autofill consistent with the dark page and modal forms. */
+.request__form input:is(:autofill,:-webkit-autofill){
+  -webkit-text-fill-color:#fff;
+  caret-color:#f4d4dc;
+  border-color:#b08b95;
+  -webkit-box-shadow:0 0 0 1000px #30262b inset;
+  box-shadow:0 0 0 1000px #30262b inset;
+}
+.request__form input:is(:autofill,:-webkit-autofill):hover{
+  border-color:#d1a6b1;
+  -webkit-box-shadow:0 0 0 1000px #3a2c33 inset;
+  box-shadow:0 0 0 1000px #3a2c33 inset;
+}
+.request__form input:is(:autofill,:-webkit-autofill):focus{
+  border-color:#ecc1cc;
+  -webkit-box-shadow:0 0 0 1000px #3b2d35 inset;
+  box-shadow:0 0 0 1000px #3b2d35 inset;
+}
+.request__form[data-request-form] :is(input:not([type="checkbox"]),textarea)[aria-invalid="true"]{
+  border-color:#f1a5b5;
+  background-color:#47202b;
+}

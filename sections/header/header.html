@@ -1,2 +1,56 @@
-<div class="design-preview"><span>Дизайн-концепция · proДАВАТЬ</span><a href="?design=contrast" data-design-switch>Вариант 02 · Контрастный</a></div>
-<header class="header"><div class="container header__inner"><a class="header__brand" href="{{root}}index.html" aria-label="proДАВАТЬ — главная"><img src="{{root}}img/brand/logo.svg" width="210" height="31" alt="proДАВАТЬ"><span>Продажи как система созидания</span></a><button class="header__toggle" type="button" data-menu aria-expanded="false" aria-controls="navigation">Меню <span aria-hidden="true">☰</span></button><nav class="header__nav" id="navigation" aria-label="Основная навигация"><a href="{{root}}index.html#services">Услуги</a><a href="{{root}}index.html#experts">О нас</a><a href="{{root}}index.html#cases">Кейсы</a><a href="{{root}}kontakty/" data-page="contacts">Контакты</a></nav><a class="header__cta" href="{{root}}kontakty/#request">Обсудить задачу </a></div></header>
+<header class="header">
+  <div class="container header__inner">
+    <a
+      class="header__brand"
+      href="{{root}}index.html"
+      aria-label="proДАВАТЬ — главная"
+      ><img
+        src="{{root}}img/brand/logo.svg"
+        width="210"
+        height="31"
+        alt="proДАВАТЬ"
+      /><span>Продажи как система созидания</span></a
+    >
+    <nav class="header__desktop-nav" aria-label="Основная навигация на компьютере"><a href="{{root}}index.html#services">Услуги</a><a href="{{root}}index.html#experts">О нас</a><a href="{{root}}index.html#cases">Практика</a><a href="{{root}}kontakty/" data-page="contacts">Контакты</a></nav>
+    <a class="header__cta" href="{{root}}kontakty/#request">Обсудить задачу</a>
+    <button
+      class="header__toggle"
+      type="button"
+      data-menu
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      aria-controls="navigation"
+      aria-haspopup="dialog"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<dialog class="menu-panel" id="navigation" aria-label="Меню сайта">
+  <div class="menu-panel__top">
+    <a
+      class="header__brand"
+      href="{{root}}index.html"
+      aria-label="proДАВАТЬ — главная"
+      ><img
+        src="{{root}}img/brand/logo.svg"
+        width="210"
+        height="31"
+        alt="proДАВАТЬ"
+      /></a>
+    <button class="menu-panel__close" type="button" data-close-menu aria-label="Закрыть меню" autofocus>
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="menu-panel__nav" aria-label="Основная навигация">
+    <a href="{{root}}index.html">Главная</a
+    ><a href="{{root}}index.html#services">Услуги</a
+    ><a href="{{root}}index.html#experts">О нас</a
+    ><a href="{{root}}index.html#cases">Практика и результаты</a
+    ><a href="{{root}}kontakty/" data-page="contacts">Контакты</a>
+  </nav>
+  <div class="menu-panel__bottom">
+    <p>Стратегия. Продажи. Развитие.</p>
+    <a class="button" href="{{root}}kontakty/#request">Обсудить задачу</a>
+  </div>
+</dialog>

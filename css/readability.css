@@ -1,0 +1,212 @@
+/* A clearer reading order: section title, short introduction, supporting detail. */
+.outcomes,
+.request,
+.services__item:not(.services__item--accent) {
+  background-image:
+    linear-gradient(#141414ad, #141414e6), url("../img/team/DSC_6594.jpg");
+  background-size: cover;
+}
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.section-heading .eyebrow {
+  padding-top: 0;
+}
+.section-heading h2 {
+  max-width: 850px;
+}
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+.tasks__rows p,
+.outcomes__list p,
+.services__item > p,
+.experts__text > p:not(.experts__statement),
+.process__steps p,
+.cases__chapters p,
+.faq__answer p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.tasks__rows h3 {
+  max-width: 350px;
+}
+.tasks__rows article {
+  grid-template-columns: 70px 1fr 1fr;
+  gap: 36px;
+  padding-block: 34px;
+}
+.services__item ul {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.services__top {
+  margin-bottom: 32px;
+}
+.cases__note,
+.request__demo,
+.request__meeting p,
+.reviews p:not(.eyebrow),
+.footer__bottom {
+  font-size: 14px;
+  line-height: 1.7;
+}
+.hero__description {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.hero__foot {
+  margin-top: 24px;
+}
+.hero__baseline {
+  font-size: 14px;
+}
+.hero__portrait figcaption {
+  font-size: 15px;
+}
+.outcomes__list {
+  gap: 32px 44px;
+}
+.outcomes__list span {
+  display: none;
+}
+.outcomes__list h3 {
+  margin-top: 0;
+}
+.outcomes__photo figcaption {
+  font-size: 14px;
+}
+.request__lead {
+  max-width: 440px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+.request__caption {
+  font-size: 30px;
+}
+.request__form > label:not(.request__consent) {
+  font-size: 15px;
+  margin-top: 22px;
+}
+.request__form input:not([type="checkbox"]),
+.request__form textarea {
+  padding: 15px 16px;
+  margin-top: 9px;
+  border: 1px solid #ffffff45;
+  background: #ffffff06;
+  font-size: 17px;
+  line-height: 1.5;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
+  outline: none;
+  box-shadow: none;
+}
+.request__form input:not([type="checkbox"]):hover,
+.request__form textarea:hover {
+  border-color: #ffffff90;
+  background: #ffffff0d;
+}
+.request__form input:not([type="checkbox"]):focus,
+.request__form textarea:focus {
+  outline: none;
+  border-color: #e6b6c1;
+  background: #ffffff16;
+  box-shadow: none;
+}
+.request__form input[aria-invalid="true"] {
+  border-color: #f1a5b5;
+  background: #8d122326;
+}
+.request__consent {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-block: 24px;
+}
+.request__consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+.request__meeting > span {
+  font-size: 15px;
+}
+.request__meeting {
+  margin-top: 30px;
+}
+.request__meeting strong {
+  font-size: 24px;
+}
+.request__field-hint {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.hero h1 {
+  font-size: clamp(46px, 5vw, 72px);
+}
+@media (min-width: 901px) {
+  .services .section-heading,
+  .cases .section-heading {
+    max-width: 850px;
+  }
+  .experts .section-heading,
+  .process .section-heading {
+    margin-left: 0;
+    max-width: 850px;
+  }
+  .outcomes__grid {
+    grid-template-columns: 1fr 1.65fr;
+    gap: 70px;
+  }
+  .faq__grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+  }
+}
+@media (max-width: 900px) {
+  .section-heading {
+    gap: 16px;
+    margin-bottom: 34px;
+  }
+  .tasks__rows article {
+    grid-template-columns: 40px 1fr 1fr;
+    gap: 22px;
+  }
+  .request__grid {
+    gap: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .tasks__rows article {
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    padding-block: 28px;
+  }
+  .tasks__rows p {
+    grid-column: 2;
+  }
+  .section-heading h2 {
+    font-size: 34px;
+  }
+  .eyebrow {
+    font-size: 12px;
+  }
+  .hero__baseline {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .request__consent {
+    font-size: 10px;
+  }
+  .request__form input:not([type="checkbox"]),
+  .request__form textarea {
+    font-size: 16px;
+  }
+}

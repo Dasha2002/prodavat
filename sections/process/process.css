@@ -1,5 +1,61 @@
-.process{color:#fff;background-color:#302b2d;background-image:linear-gradient(90deg,rgba(27,23,23,.86),rgba(27,23,23,.69)),url('../../img/team/collaboration.webp');background-size:cover;background-position:center 24%;background-repeat:no-repeat}
-.process .eyebrow::before{background:#dca5af}.process__steps{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin:0}
-.process__steps li{border-top:1px solid #ffffff60;padding-top:18px}.process__steps span{font-size:15px;color:#f0c5ce}.process__steps h3{font-size:24px;margin:32px 0 16px}.process__steps p{font-size:15px;color:#f0e9ec}
-@media(max-width:800px){.process__steps{grid-template-columns:1fr 1fr;gap:35px}.process{background-position:center 30%}}
-@media(max-width:560px){.process{background-position:54% center;background-image:linear-gradient(rgba(27,23,23,.76),rgba(27,23,23,.85)),url('../../img/team/collaboration.webp')}.process__steps{gap:30px 20px}.process__steps h3{font-size:22px;margin-top:22px}.process__steps p{font-size:15px}}
+.process {
+  color: #fff;
+  background-color: #302b2d;
+  background-image:
+    linear-gradient(90deg, rgb(0 0 0 / 55%), rgb(27 23 23 / 34%)), url(../../img/team/collaboration.webp);
+  background-size: cover;
+  background-position: center 24%;
+  background-repeat: no-repeat;
+}
+.process .eyebrow::before {
+  background: #dca5af;
+}
+.process__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 0;
+}
+.process__steps li {
+  border-top: 1px solid #ffffff60;
+  padding-top: 18px;
+}
+.process__steps span {
+  font-size: 25px;
+  color: #f0c5ce;
+}
+.process__steps h3 {
+  font-size: 24px;
+  margin: 32px 0 16px;
+}
+.process__steps p {
+  font-size: 15px;
+  color: #f0e9ec;
+}
+@media (max-width: 800px) {
+  .process__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  .process {
+    background-position: center 30%;
+  }
+}
+@media (max-width: 560px) {
+  .process {
+    background-position: 54% center;
+    background-image:
+      linear-gradient(rgba(27, 23, 23, 0.76), rgba(27, 23, 23, 0.85)),
+      url("../../img/team/collaboration.webp");
+  }
+  .process__steps {
+    gap: 30px 20px;
+  }
+  .process__steps h3 {
+    font-size: 22px;
+    margin-top: 22px;
+  }
+  .process__steps p {
+    font-size: 15px;
+  }
+}

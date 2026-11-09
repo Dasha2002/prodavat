@@ -1,0 +1,44 @@
+/* Each photographic surface uses a separate frame from the brand shoot. */
+.outcomes {
+  background-image:
+    linear-gradient(90deg, #14141482, #14141491), url("../img/team/DSC_6588.jpg");
+  background-position: center 18%;
+}
+.request {
+  background-image:
+    linear-gradient(90deg, #141414e6, #141414c9),
+    url("../img/team/request-background.webp");
+  background-position: center 30%;
+}
+.services__item:not(.services__item--accent) {
+  background-color: #141414;
+  background-image:
+    linear-gradient(90deg, #141414ed 0%, #141414b8 70%, #14141499 100%),
+    url("../img/team/DSC_7252.jpg");
+  background-position: 62% 0%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.services__item:not(.services__item--accent):hover {
+  background-color: #211d1f;
+}
+.services__item:not(.services__item--accent) .text-link:hover {
+  color: #efc6d0;
+}
+.request-modal__card::before {
+  background-image:
+    linear-gradient(180deg, #1118 0%, #111b 35%, #111 100%),
+    url("../img/team/DSC_6594.jpg");
+  background-position: center 20%;
+}
+@media (max-width: 700px) {
+  .outcomes {
+    background-position: 58% center;
+  }
+  .request {
+    background-position: 60% center;
+  }
+  .services__item:not(.services__item--accent) {
+    background-position: 58% 35%;
+  }
+}

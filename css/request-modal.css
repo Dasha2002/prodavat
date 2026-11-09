@@ -1,0 +1,152 @@
+html.has-request {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+}
+.request-modal {
+  --ink: #f5f5f7;
+  --muted: #c8c1c5;
+  --line: #ffffff30;
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  border: 0;
+  padding: 40px 24px;
+  background: transparent;
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.request-modal::backdrop {
+  background: #080808bd;
+  backdrop-filter: blur(7px);
+}
+.request-modal__card {
+  position: relative;
+  isolation: isolate;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  background: #111;
+  padding: 34px 56px 48px;
+  box-shadow: 0 24px 100px #0005;
+}
+.request-modal__card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: 500px;
+  background:
+    linear-gradient(180deg, #1119 0%, #111b 30%, #111f 100%),
+    url("../img/team/DSC_6594.jpg") center 26% / cover no-repeat;
+  pointer-events: none;
+}
+.request-modal__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 100px;
+}
+.request-modal__top img {
+  width: 210px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.request-modal__intro {
+  margin-bottom: 38px;
+}
+.request-modal__intro .eyebrow {
+  font-size: 12px;
+}
+.request-modal__intro .eyebrow::before {
+  background: #d8a1ad;
+}
+.request-modal__intro h2 {
+  font-size: 48px;
+  line-height: 1.05;
+  margin: 22px 0 18px;
+}
+.request-modal__intro > p:last-child {
+  font-size: 16px;
+  color: #ded6da;
+  max-width: 430px;
+  line-height: 1.7;
+}
+.request-modal .request__caption {
+  display: none;
+}
+.request-modal .request__form {
+  margin: 0;
+}
+.request-modal .request__form .button {
+  width: 100%;
+}
+.request-modal .request__demo {
+  color: var(--muted);
+}
+.request-modal .request__status {
+  color: #edc1cc;
+}
+.request-modal .request__consent a {
+  border-color: #aaa;
+}
+.request-modal .request__form input::placeholder,
+.request-modal .request__form textarea::placeholder {
+  color: #ada6aa;
+}
+.request-modal [hidden] {
+  display: none !important;
+}
+.request-modal .request__form > label:not(.request__consent) {
+  font-size: 15px;
+}
+.request-modal .request__form input:not([type="checkbox"]),
+.request-modal .request__form textarea {
+  color: #fff;
+}
+.request-modal[open] .request-modal__card {
+  animation: request-enter 0.3s ease-out;
+}
+@keyframes request-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .request-modal {
+    padding: 16px 12px;
+  }
+  .request-modal__card {
+    padding: 22px 22px 32px;
+  }
+  .request-modal__top {
+    margin-bottom: 50px;
+  }
+  .request-modal__top img {
+    width: 175px;
+  }
+  .request-modal__intro h2 {
+    font-size: 28px;
+  }
+  .request-modal__card::before {
+    height: 430px;
+  }
+  .request-modal__intro > p:last-child {
+     font-size: 14px;
+  }
+  .request-modal__intro {
+    margin-bottom: 28px;
+  }
+}
