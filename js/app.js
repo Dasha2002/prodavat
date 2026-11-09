@@ -1,4 +1,7 @@
 document.addEventListener('sections:loaded', async () => {
+  document.addEventListener('click', event => {
+    if (event.target.closest('[data-placeholder-link]')) event.preventDefault();
+  });
   document.querySelectorAll('[data-accordion]').forEach(accordion => {
     const questions = [...accordion.querySelectorAll('.faq__question')];
     questions.forEach(question => question.addEventListener('click', () => {

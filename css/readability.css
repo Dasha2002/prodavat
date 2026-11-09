@@ -52,8 +52,7 @@
 .cases__note,
 .request__demo,
 .request__meeting p,
-.reviews p:not(.eyebrow),
-.footer__bottom {
+.reviews p:not(.eyebrow) {
   font-size: 14px;
   line-height: 1.7;
 }
