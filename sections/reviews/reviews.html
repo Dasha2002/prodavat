@@ -5,7 +5,7 @@
       <button class="button button--dark" type="button" data-open-review>Написать отзыв</button>
     </div>
     <p class="reviews__demo">Примеры оформления. Здесь будут опубликованы отзывы клиентов.</p>
-    <div class="reviews__cards">
+    <div class="reviews__carousel" role="region" aria-roledescription="карусель" aria-label="Отзывы о сотрудничестве"><div class="reviews__cards" tabindex="0" aria-label="Лента отзывов">
       <div class="review-card-slot"><article class="review-card">
         <div class="review-card__top"><span class="review-card__stars" aria-label="5 из 5">★★★★★</span><img class="review-card__logo" src="{{root}}img/brand/Group 1948753851.svg" width="140" height="27" alt="proДАВАТЬ" loading="lazy"></div>
         <blockquote id="review-text-1" class="review-card__text">«Появилась ясность: где теряем сделки, какие показатели смотреть и с чего начинать изменения. Вместо длинного списка идей — понятный план работы для команды. Отдельно разобрали воронку и договорились, какие цифры действительно помогают принимать решения. Важно, что рекомендации учитывали наши ресурсы: что можем сделать сейчас, а что стоит отложить. После встречи у каждого появился свой участок ответственности и понятный следующий шаг.»</blockquote>
@@ -31,6 +31,7 @@
         <div class="review-card__author"><span class="review-card__avatar" aria-hidden="true">Е</span><div><h3>Елена</h3><p>Коммерческий директор · стратегия продаж</p></div></div>
       </article></div>
     </div>
+    <div class="reviews__pagination" aria-label="Переключение отзывов"></div></div>
     <div class="reviews__platforms" aria-label="Примеры виджетов с отзывами">
       <a class="review-platform" href="#" data-placeholder-link><span class="review-platform__logo review-platform__logo--yandex" aria-hidden="true">Я</span><div><h3>Яндекс Карты</h3><p>Отзывы о нашей работе</p></div><div class="review-platform__placeholder"><span aria-hidden="true">★★★★★</span><small>Виджет пока не подключён</small></div></a>
       <a class="review-platform" href="#" data-placeholder-link><span class="review-platform__logo review-platform__logo--vk"><img src="{{root}}img/icons/vk.svg" width="28" height="28" alt=""></span><div><h3>ВКонтакте</h3><p>Отзывы в сообществе</p></div><div class="review-platform__placeholder"><span aria-hidden="true">★★★★★</span><small>Виджет пока не подключён</small></div></a>

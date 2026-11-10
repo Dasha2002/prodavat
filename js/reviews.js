@@ -1,5 +1,6 @@
 document.addEventListener('sections:loaded', () => {
   const cards = [...document.querySelectorAll('.review-card-slot')];
+  let syncCarouselHeight = () => {};
   const animations = new WeakMap();
   const setExpanded = (slot, expanded) => {
     if (slot.classList.contains('is-expanded') === expanded) return;
@@ -12,6 +13,7 @@ document.addEventListener('sections:loaded', () => {
     const button = slot.querySelector('.review-card__toggle');
     button.setAttribute('aria-expanded', String(expanded));
     button.textContent = expanded ? 'Свернуть' : 'Читать полностью';
+    syncCarouselHeight();
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       slot.classList.remove('is-animating');
       return;
@@ -29,6 +31,7 @@ document.addEventListener('sections:loaded', () => {
       if (animations.get(slot) !== running) return;
       slot.classList.remove('is-animating');
       animations.delete(slot);
+      syncCarouselHeight();
     }).catch(() => {});
   };
   const collapseCard = slot => setExpanded(slot, false);
@@ -57,6 +60,82 @@ document.addEventListener('sections:loaded', () => {
   if (grid) observer.observe(grid);
   document.fonts.ready.then(measureCards);
   measureCards();
+  const carousel = document.querySelector('.reviews__carousel');
+  if (carousel && grid) {
+    const pagination = carousel.querySelector('.reviews__pagination');
+    let pages = [];
+    let stepWidth = 1;
+    let lastWidth = 0;
+    const currentPage = () => Math.min(pages.length - 1, Math.max(0, Math.round(grid.scrollLeft / stepWidth)));
+    const paintPagination = () => pages.forEach((button, index) => {
+      button.setAttribute('aria-current', String(index === currentPage()));
+    });
+    const goTo = index => {
+      const page = Math.max(0, Math.min(pages.length - 1, index));
+      grid.scrollTo({left:page * stepWidth, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    };
+    syncCarouselHeight = () => {
+      const height = Math.max(...cards.map(slot => slot.classList.contains('is-expanded') ? slot.querySelector('.review-card').scrollHeight + 2 : slot.clientHeight));
+      grid.style.setProperty('--review-track-height', `${height}px`);
+    };
+    const layoutCarousel = () => {
+      if (grid.clientWidth === lastWidth) return;
+      lastWidth = grid.clientWidth;
+      const columns = Number.parseInt(getComputedStyle(carousel).getPropertyValue('--review-columns'),10) || 1;
+      const gap = Number.parseFloat(getComputedStyle(grid).columnGap) || 0;
+      stepWidth = cards[0].getBoundingClientRect().width + gap;
+      pagination.replaceChildren();
+      pages = Array.from({length:Math.max(1,cards.length - columns + 1)}, (_, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'reviews__page';
+        button.setAttribute('aria-label', `Показать отзывы с ${index + 1}-го`);
+        button.addEventListener('click', () => goTo(index));
+        pagination.append(button);
+        return button;
+      });
+      paintPagination();
+      syncCarouselHeight();
+    };
+    const resize = new ResizeObserver(layoutCarousel);
+    resize.observe(grid);
+    grid.addEventListener('scroll', paintPagination, {passive:true});
+    grid.addEventListener('keydown', event => {
+      if (event.target !== grid || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      const index = event.key === 'Home' ? 0 : event.key === 'End' ? pages.length - 1 : currentPage() + (event.key === 'ArrowRight' ? 1 : -1);
+      goTo(index);
+    });
+    let drag;
+    grid.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'mouse' || event.button !== 0 || event.target.closest('button,a')) return;
+      drag = {x:event.clientX, left:grid.scrollLeft, id:event.pointerId, moved:false};
+    });
+    grid.addEventListener('pointermove', event => {
+      if (!drag) return;
+      const distance = event.clientX - drag.x;
+      if (!drag.moved && Math.abs(distance) < 6) return;
+      drag.moved = true;
+      grid.setPointerCapture(drag.id);
+      grid.classList.add('is-dragging');
+      grid.scrollLeft = drag.left - distance;
+      event.preventDefault();
+    });
+    const finishDrag = () => {
+      if (!drag) return;
+      const moved = drag.moved;
+      if (grid.hasPointerCapture(drag.id)) grid.releasePointerCapture(drag.id);
+      drag = null;
+      grid.classList.remove('is-dragging');
+      if (moved) goTo(currentPage());
+    };
+    grid.addEventListener('pointerup', finishDrag);
+    grid.addEventListener('pointercancel', finishDrag);
+    grid.addEventListener('pointerleave', () => { if (drag && !drag.moved) drag = null; });
+    grid.querySelectorAll('img').forEach(image => image.draggable = false);
+    document.fonts.ready.then(() => { measureCards(); syncCarouselHeight(); });
+    layoutCarousel();
+  }
   const modal = document.querySelector('.review-modal');
   if (!modal) return;
   document.body.append(modal);

@@ -1,3 +1,158 @@
-.contact-hero{padding-top:60px;padding-bottom:70px}.contact-hero__grid{display:grid;grid-template-columns:1.25fr 1fr;gap:80px}.contact-hero h1{margin:28px 0;font-size:clamp(48px,5.4vw,76px)}.contact-hero h1 em{font-style:normal;color:var(--accent)}.contact-hero__intro{font-size:16px;color:var(--muted);max-width:440px}.contact-hero__channels{margin-top:45px;border-top:1px solid var(--line)}.contact-hero__channel{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}.contact-hero__channel>div>span{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}.contact-hero__channel a,.contact-hero__channel strong{font:26px var(--display);font-weight:400;letter-spacing:-.03em}.contact-hero__channel a:hover{color:var(--accent)}.contact-hero__channel>span{font-size:25px;color:var(--accent)}.contact-hero__note{font-size:12px;color:var(--muted);margin-top:18px}.contact-hero__visual{background:var(--accent);padding:40px;display:flex;flex-direction:column;color:#fff;min-height:500px}.contact-hero__visual>.eyebrow::before{background:#e0b4bd}.contact-hero__arrow{font:180px/1 var(--display);font-weight:200;align-self:center;margin:45px 0 30px}.contact-hero__visual h2{font-size:40px}.contact-hero__visual p:last-child{font-size:15px;color:#dfbfc5;margin-top:20px;max-width:300px}.simple-page{padding-block:80px;max-width:850px}.simple-page h1{font-size:54px;margin-bottom:35px}.simple-page h2{font-size:28px;margin:32px 0 15px}.simple-page p{margin-bottom:20px}.simple-page .button{margin-top:20px}@media(max-width:900px){.contact-hero__grid{gap:35px}.contact-hero__visual{padding:28px}.contact-hero__visual h2{font-size:32px}.contact-hero__channel a,.contact-hero__channel strong{font-size:23px}}@media(max-width:560px){.contact-hero{padding:40px 0 50px}.contact-hero__grid{grid-template-columns:1fr;gap:35px}.contact-hero h1{font-size:49px}.contact-hero__visual{min-height:330px}.contact-hero__arrow{font-size:120px;align-self:end;margin:10px 10px 0}.contact-hero__visual h2{font-size:36px}.simple-page{padding-block:50px}.simple-page h1{font-size:40px}}
-.contact-hero__visual h2{margin-top:auto;padding-top:70px}
+.contact-hero {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+.contact-hero__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+}
+.contact-hero h1 {
+  margin: 28px 0;
+  font-size: clamp(48px, 5.4vw, 76px);
+}
+.contact-hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+.contact-hero__intro {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 440px;
+}
+.contact-hero__channels {
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+}
+.contact-hero__channel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-hero__channel > div > span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.contact-hero__channel a,
+.contact-hero__channel strong {
+  font: 26px var(--display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.contact-hero__channel a:hover {
+  color: var(--accent);
+}
+.contact-hero__channel > span {
+  font-size: 25px;
+  color: var(--accent);
+}
+.contact-hero__note {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+.contact-hero__visual {
+  background: var(--accent);
+  background-image: linear-gradient(
+181deg, #14141400, #141414), url(../img/team/DSC_6568.jpg);
+  background-size: cover;
 
+  
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  min-height: 500px;
+}
+.contact-hero__visual > .eyebrow::before {
+  background: #e0b4bd;
+}
+
+.eyebrow-white {
+    color: #fff;
+}
+.contact-hero__arrow {
+  font: 180px/1 var(--display);
+  font-weight: 200;
+  align-self: center;
+  margin: 45px 0 30px;
+}
+.contact-hero__visual h2 {
+  font-size: 40px;
+}
+.contact-hero__visual p:last-child {
+  font-size: 15px;
+  color: #dfbfc5;
+  margin-top: 20px;
+  max-width: 300px;
+}
+.simple-page {
+  padding-block: 80px;
+  max-width: 850px;
+}
+.simple-page h1 {
+  font-size: 54px;
+  margin-bottom: 35px;
+}
+.simple-page h2 {
+  font-size: 28px;
+  margin: 32px 0 15px;
+}
+.simple-page p {
+  margin-bottom: 20px;
+}
+.simple-page .button {
+  margin-top: 20px;
+}
+@media (max-width: 900px) {
+  .contact-hero__grid {
+    gap: 35px;
+  }
+  .contact-hero__visual {
+    padding: 28px;
+  }
+  .contact-hero__visual h2 {
+    font-size: 32px;
+  }
+  .contact-hero__channel a,
+  .contact-hero__channel strong {
+    font-size: 23px;
+  }
+}
+@media (max-width: 560px) {
+  .contact-hero {
+    padding: 40px 0 50px;
+  }
+  .contact-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .contact-hero h1 {
+    font-size: 49px;
+  }
+  .contact-hero__visual {
+    min-height: 330px;
+  }
+  .contact-hero__arrow {
+    font-size: 120px;
+    align-self: end;
+    margin: 10px 10px 0;
+  }
+  .contact-hero__visual h2 {
+    font-size: 36px;
+  }
+  .simple-page {
+    padding-block: 50px;
+  }
+  .simple-page h1 {
+    font-size: 40px;
+  }
+}
+.contact-hero__visual h2 {
+  margin-top: auto;
+  padding-top: 70px;
+}

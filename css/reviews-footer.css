@@ -12,6 +12,8 @@
 .footer .footer__top nav { display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:14px; padding-top:0; grid-column:auto; }
 .footer__decoration { top:0; right:0; bottom:auto; width:auto; height:100%; max-width:100%; object-fit:contain; object-position:right center; opacity:.28; }
 .footer__bottom { position:relative; }
+.footer { padding-bottom:0; }
+.footer__wordmark { position: absolute; top: 40%; display:block; width:100%; height:auto; margin-top:44px; opacity:.28; pointer-events:none; }
 
 /* Icon, title and separator share a single hover colour. */
 .outcomes .outcomes-icon { filter:none; background-color:#fff; mask:var(--outcomes-icon) center/contain no-repeat; -webkit-mask:var(--outcomes-icon) center/contain no-repeat; transition:background-color .3s ease; }
@@ -107,6 +109,7 @@ html.has-review { overflow:hidden; scrollbar-gutter:stable; }
   .review-platform__placeholder { width:100%; text-align:left; margin-left:60px; }
 }
 @media (max-width:800px) {
+  .footer__wordmark { opacity:.18; margin-top:36px; }
   .footer__top { grid-template-columns:1fr 1fr; gap:40px; }
   .footer .footer__top nav { grid-column:2; }
   .footer__decoration { opacity:.18; }
@@ -116,6 +119,7 @@ html.has-review { overflow:hidden; scrollbar-gutter:stable; }
   .review-platform { padding:20px; }
 }
 @media (max-width:600px) {
+  .footer__wordmark { opacity:.15; margin-top:28px; }
   .footer__top { grid-template-columns:1fr; gap:36px; }
   .footer .footer__top nav { grid-column:auto; }
   .footer__contacts a { font-size:16px; }
