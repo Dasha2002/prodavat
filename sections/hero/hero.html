@@ -1,26 +1,25 @@
-<section class="hero">
-  <div class="container hero__grid">
-    <div class="hero__content">
-      <p class="eyebrow">Стратегия. Продажи. Развитие.</p>
-      <h1>Продажи,<br>которыми можно<br><em>управлять</em></h1>
-      <p class="hero__lead">Аудит, построение и развитие отдела продаж</p>
-      <p class="hero__description">Находим причины потерь в продажах и помогаем выстроить процессы, чтобы команда работала системно, а собственник мог заниматься развитием бизнеса.</p>
-      <a class="button" href="{{root}}kontakty/#request"
-        >Обсудить вашу задачу
-      </a>
-      <div class="hero__foot"><a href="#services">Выбрать формат работы</a></div>
-    </div>
-    <div class="hero__visual">
-      <figure class="hero__portrait">
-        <img
-          src="{{root}}img/team/experts.webp"
-          width="800"
-          height="1200"
-          alt="Эксперт proДАВАТЬ в деловом пространстве"
-          fetchpriority="high"
-        />
-
-      </figure>
-    </div>
+<section class="hero hero--atelier" aria-labelledby="hero-title">
+  <div class="hero-atelier__arch" aria-hidden="true"></div>
+  <div class="hero-atelier__copy">
+    <p class="eyebrow">Продажи как система созидания</p>
+    <h1 id="hero-title">Продажи <em>под вашим</em> контролем</h1>
+    <p class="hero-atelier__intro">Аудит и развитие отделов продаж</p>
+    <a class="button" href="{{root}}kontakty/#request">Обсудить задачу</a>
+  </div>
+  <picture class="hero-atelier__portrait hero-atelier__portrait--left">
+    <source media="(min-width:1101px)" srcset="{{root}}img/team/hero-elena-cutout.webp">
+    <img src="{{root}}img/transparent.svg" width="1100" height="1600" alt="Елена — эксперт proДАВАТЬ">
+  </picture>
+  <picture class="hero-atelier__portrait hero-atelier__portrait--right">
+    <source media="(min-width:1101px)" srcset="{{root}}img/team/hero-anastasia-cutout.webp">
+    <img src="{{root}}img/transparent.svg" width="1100" height="1600" alt="Анастасия — эксперт proДАВАТЬ">
+  </picture>
+  <picture class="hero-atelier__duo">
+    <source media="(max-width:1100px)" srcset="{{root}}img/team/hero-team-cutout.webp">
+    <img src="{{root}}img/transparent.svg" width="1408" height="1117" alt="Елена и Анастасия — команда proДАВАТЬ">
+  </picture>
+  <div class="hero-atelier__wordmark" role="region" aria-label="Логотип proДАВАТЬ">
+    <div class="hero-atelier__conveyor" aria-hidden="true"></div>
+    <button class="hero-atelier__motion" type="button" data-hero-motion aria-pressed="false" aria-label="Приостановить движение логотипа"><span aria-hidden="true">Ⅱ</span></button>
   </div>
 </section>

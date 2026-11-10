@@ -66,10 +66,15 @@ document.addEventListener('sections:loaded', () => {
     let pages = [];
     let stepWidth = 1;
     let lastWidth = 0;
+    const previous = carousel.querySelector('[data-review-prev]');
+    const next = carousel.querySelector('[data-review-next]');
     const currentPage = () => Math.min(pages.length - 1, Math.max(0, Math.round(grid.scrollLeft / stepWidth)));
-    const paintPagination = () => pages.forEach((button, index) => {
-      button.setAttribute('aria-current', String(index === currentPage()));
-    });
+    const paintPagination = () => {
+      const index = currentPage();
+      pages.forEach((button, position) => button.setAttribute('aria-current', String(position === index)));
+      if (previous) previous.disabled = index <= 0;
+      if (next) next.disabled = index >= pages.length - 1;
+    };
     const goTo = index => {
       const page = Math.max(0, Math.min(pages.length - 1, index));
       grid.scrollTo({left:page * stepWidth, behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
@@ -98,6 +103,8 @@ document.addEventListener('sections:loaded', () => {
       syncCarouselHeight();
     };
     const resize = new ResizeObserver(layoutCarousel);
+    previous?.addEventListener('click', () => goTo(currentPage() - 1));
+    next?.addEventListener('click', () => goTo(currentPage() + 1));
     resize.observe(grid);
     grid.addEventListener('scroll', paintPagination, {passive:true});
     grid.addEventListener('keydown', event => {

@@ -25,7 +25,7 @@
 .experts,.faq { position:relative; isolation:isolate; overflow:clip; }
 .experts > .container,.faq > .container { position:relative; z-index:1; }
 .experts::after,.faq::after { content:""; position:absolute; z-index:-1; pointer-events:none; background:url('../img/brand/brand-mark.svg') center/contain no-repeat; }
-.experts::after { width:600px; height:620px; top:64px; right:-160px; opacity:.055; }
+.experts::after { width:600px; height:620px; bottom:0; right:0; opacity:.055; }
 .faq::after { width:400px; height:430px; bottom:-200px; left:-200px; opacity:.045; transform:rotate(180deg); }
 
 .footer { position:relative; isolation:isolate; overflow:hidden; padding:84px 0 26px; background:#101012; color:#fff; --line:#ffffff30; --muted:#c0bdc2; }

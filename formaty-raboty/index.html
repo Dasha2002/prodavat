@@ -25,40 +25,20 @@
     <div data-include="../sections/header/header.html"></div>
     <main id="main">
       
-      <section class="hero hero--formats">
-        <div class="container hero__grid">
-          <div class="hero__content">
-            <p class="eyebrow">Форматы работы</p>
-            <h1>
-              Понять задачу<br />
-              Выстроить<br />
-              <em>систему продаж</em>
-            </h1>
-            <p class="hero__lead">Аудит, построение и развитие отдела</p>
-            <p class="hero__description">
-              Два формата под разные точки старта: разобраться в причинах
-              проблем или перейти к последовательным изменениям в отделе продаж.
-            </p>
-            <a class="button" href="../kontakty/#request"
-              >Подобрать формат работы</a
-            >
-            <div class="hero__foot">
-              <a href="#compare">Сравнить форматы</a>
-            </div>
-          </div>
-          <div class="hero__visual">
-            <figure class="hero__portrait">
-              <img
-                src="../img/team/practice-duo.webp"
-                width="1100"
-                height="1450"
-                alt="Анастасия и Елена — команда proДАВАТЬ"
-                fetchpriority="high"
-              />
-            </figure>
-          </div>
-        </div>
-      </section>
+      <section class="hero hero--editorial" aria-labelledby="hero-title">
+  <div class="hero-editorial__scene">
+    <img class="hero-editorial__photo" src="../img/team/DSC_6768.jpg" width="2500" height="1669" alt="Елена и Анастасия — эксперты proДАВАТЬ" fetchpriority="high">
+    <div class="hero-editorial__panel">
+      <p class="eyebrow">Форматы работы</p>
+      <h1 id="hero-title"><span>Аудит </span><span>и </span><span>развитие</span></h1>
+      <p class="hero-editorial__intro">Разобраться в причинах или выстроить систему с нуля — подберём формат под задачи вашего отдела продаж</p>
+      <a class="button button--dark" href="../kontakty/#request">Подобрать формат работы</a>
+    </div>
+    <p class="hero-editorial__note">От диагностики<br>до внедрения изменений</p>
+
+  </div>
+</section>
+
       
 <nav class="breadcrumbs container" aria-label="Хлебные крошки">
         <a href="../index.html">Главная</a><span aria-hidden="true">/</span
@@ -145,8 +125,8 @@
       <div data-include="../sections/request/request.html"></div>
     </main>
     <div data-include="../sections/footer/footer.html"></div>
-    <script src="../js/app.js"></script>
+    <script src="../js/app.js"></script><script src="../js/decor-parallax.js"></script>
     <script src="../js/interior.js"></script>
-    <script src="../js/include-sections.js"></script>
+    <script src="../js/scroll-reveal.js"></script><script src="../js/include-sections.js"></script>
   </body>
 </html>

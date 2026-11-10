@@ -1,0 +1,5 @@
+.decor-parallax::after { translate:0 var(--decor-shift,0px); }
+.decor-parallax-visible::after { will-change:translate; }
+@media(prefers-reduced-motion:reduce) {
+  .decor-parallax::after { translate:none; will-change:auto; }
+}
