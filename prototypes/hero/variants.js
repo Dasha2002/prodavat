@@ -1,4 +1,5 @@
-const ROOT = '../../';
+const ROOT = document.body.dataset.root || '';
+let localHeroHTML = '';
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const headerHeight = () => document.querySelector('.header')?.offsetHeight || 0;
 
@@ -237,6 +238,7 @@ const desc = 'Находим причины потерь в продажах и 
 const chips = ['Стратегия', 'Воронка', 'CRM', 'Скрипты', 'Регламенты', 'Найм', 'Обучение', 'Мотивация', 'Планы', 'KPI', 'Отчёты', 'Контроль'];
 
 const variants = [
+  { html: () => localHeroHTML, init: stage => window.initAtelierHero(stage.querySelector('.hero--atelier')) },
   { html: () => `
   <section class="canvas">
     <img class="canvas__img hv-fade" src="${EXPERT}" width="1707" height="2560" alt="Эксперт proДАВАТЬ" fetchpriority="high">
@@ -427,13 +429,23 @@ const variants = [
   </section>`, init: initThrough },
 ];
 
+async function startVariants() {
+  const ready = document.querySelector('.proto-picker')
+    ? Promise.resolve()
+    : new Promise(resolve => document.addEventListener('sections:loaded', resolve, {once:true}));
+  const template = fetch(`${ROOT}sections/hero/hero.html`).then(response => {
+    if (!response.ok) throw new Error('Не удалось загрузить локальный вариант hero');
+    return response.text();
+  });
+  const [, html] = await Promise.all([ready, template]);
+  localHeroHTML = html.replaceAll('{{root}}', ROOT);
 const stage = document.getElementById('stage');
 const picker = document.querySelector('.proto-picker');
 const highlight = picker.querySelector('.proto-picker-highlight');
 const items = [...picker.querySelectorAll('.proto-picker-item:not(.proto-picker-replay)')];
 const replay = picker.querySelector('.proto-picker-replay');
 let current = 0;
-let cleanup = null;
+let cleanup = window.initAtelierHero(document.querySelector('#stage .hero--atelier')) || null;
 let mountToken = 0;
 
 function moveHighlight() {
@@ -465,6 +477,8 @@ function setActive(i) {
     else el.removeAttribute('aria-current');
   });
   moveHighlight();
+  const selected = items[i];
+  picker.scrollTo({left:Math.max(0, selected.offsetLeft - picker.clientWidth / 2 + selected.offsetWidth / 2), behavior:reduceMotion ? 'instant' : 'smooth'});
   const url = new URL(location);
   url.searchParams.set('v', i + 1);
   history.replaceState(null, '', url);
@@ -476,7 +490,8 @@ replay?.addEventListener('click', () => mount(current));
 window.addEventListener('resize', moveHighlight);
 
 document.addEventListener('keydown', (e) => {
-  if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+  if (e.target.closest('input,textarea,select,dialog,[contenteditable=true]')) return;
+  if (e.target !== document.body && !picker.contains(e.target)) return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   const num = e.key === '0' ? 10 : parseInt(e.key, 10);
   if (num >= 1 && num <= variants.length) setActive(num - 1);
@@ -485,5 +500,9 @@ document.addEventListener('keydown', (e) => {
   else if (e.key === 'r' || e.key === 'R') mount(current);
 });
 
-setActive((parseInt(new URLSearchParams(location.search).get('v'), 10) || 1) - 1);
+const requested = parseInt(new URLSearchParams(location.search).get('v'), 10) || 1;
+setActive(Math.max(0, Math.min(variants.length - 1, requested - 1)));
 requestAnimationFrame(() => requestAnimationFrame(() => picker.setAttribute('data-ready', '')));
+
+}
+startVariants().catch(error => console.error(error));

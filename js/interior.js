@@ -11,38 +11,42 @@ document.addEventListener('sections:loaded', () => {
     document.fonts.ready.then(updateStickyCopies);
     updateStickyCopies();
   }
-  document.querySelectorAll('.inner-scenario').forEach(details => {
-    const summary = details.querySelector('summary');
-    const body = details.querySelector('.inner-scenario__body');
-    let expanded = details.open;
-    let running;
-    summary.addEventListener('click', event => {
-      event.preventDefault();
-      expanded = !expanded;
-      const from = details.getBoundingClientRect().height;
-      const fromOpacity = getComputedStyle(body).opacity;
-      running?.forEach(animation => animation.cancel());
-      details.open = true;
-      const style = getComputedStyle(details);
-      const border = (Number.parseFloat(style.borderTopWidth) || 0) + (Number.parseFloat(style.borderBottomWidth) || 0);
-      const target = expanded ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + border;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.inner-scenarios').forEach(group => {
+    const items = [...group.querySelectorAll('.inner-scenario')];
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const controllers = new Map();
+    let active = items.find(item => item.open) || items[0];
+    items.forEach(details => {
+      details.open = details === active;
+      const summary = details.querySelector('summary');
+      const body = details.querySelector('.inner-scenario__body');
+      let running = [];
+      controllers.set(details, expanded => {
+        const from = details.getBoundingClientRect().height;
+        running.forEach(animation => animation.cancel());
         details.open = expanded;
-        return;
-      }
-      details.classList.add('is-animating');
-      const timing = { duration:450, easing:'cubic-bezier(.22,1,.36,1)' };
-      const animations = [
-        details.animate([{height:`${from}px`}, {height:`${target}px`}], timing),
-        body.animate([{opacity:expanded && !running ? 0 : fromOpacity}, {opacity:expanded ? 1 : 0}], timing)
-      ];
-      running = animations;
-      Promise.all(animations.map(animation => animation.finished)).then(() => {
-        if (running !== animations) return;
-        details.open = expanded;
-        details.classList.remove('is-animating');
-        running = null;
-      }).catch(() => {});
+        const style = getComputedStyle(details);
+        const border = (parseFloat(style.borderTopWidth) || 0) + (parseFloat(style.borderBottomWidth) || 0);
+        const target = expanded ? details.getBoundingClientRect().height : summary.getBoundingClientRect().height + border;
+        if (reduced.matches) { details.classList.remove('is-animating'); return; }
+        details.classList.add('is-animating');
+        const timing = {duration:450, easing:'cubic-bezier(.22,1,.36,1)'};
+        const animations = [details.animate([{height:`${from}px`}, {height:`${target}px`}], timing)];
+        if (expanded) animations.push(body.animate([{opacity:0}, {opacity:1}], timing));
+        running = animations;
+        Promise.allSettled(animations.map(animation => animation.finished)).then(() => {
+          if (running !== animations) return;
+          details.classList.remove('is-animating');
+          running = [];
+        });
+      });
+      summary.addEventListener('click', event => {
+        event.preventDefault();
+        if (details === active) return;
+        controllers.get(active)?.(false);
+        active = details;
+        controllers.get(details)(true);
+      });
     });
   });
   document.querySelectorAll('[data-interactive-roadmap]').forEach(roadmap => {

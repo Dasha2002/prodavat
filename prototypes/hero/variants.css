@@ -382,3 +382,13 @@
   bottom: auto;
   top: 24px;
 }
+
+/* The local hero keeps its own colour and typography within the preview stage. */
+#stage .hero--atelier h1 em { color:#211719; }
+.proto-picker { width:max-content; max-width:calc(100vw - 24px); overflow-x:auto; scrollbar-width:none; }
+.proto-picker::-webkit-scrollbar { display:none; }
+.proto-picker-item,.proto-picker-divider { flex-shrink:0; white-space:nowrap; }
+@media(max-width:600px) {
+  .proto-picker { bottom:10px; max-width:calc(100vw - 16px); font-size:12px; }
+  .proto-picker-item { padding-inline:10px; }
+}

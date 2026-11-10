@@ -7,6 +7,6 @@ document.addEventListener('sections:loaded', () => {
     filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
     articles.forEach(article => { article.hidden = topic !== 'all' && article.dataset.knowledgeTopic !== topic; });
     const count = articles.filter(article => !article.hidden).length;
-    status.textContent = `${count} ${count === 2 ? 'темы' : 'тем'} в подготовке`;
+    status.textContent = `${count} ${count === 2 ? 'материала' : 'материалов'}`;
   }));
 });

@@ -180,7 +180,7 @@ document.addEventListener('sections:loaded', async () => {
       contact.setCustomValidity(validContact ? '' : 'Введите номер полностью: +7 (999) 123-45-67');
       if (!form.reportValidity()) return;
       const status = form.querySelector('[role="status"]');
-      status.textContent = 'Это демонстрационная форма. Отправка ещё не подключена, данные не переданы. Скопируйте текст обращения, чтобы сохранить его.';
+      status.textContent = 'Обращение подготовлено. Вы можете скопировать его текст.';
       const output = form.querySelector('[data-request-output]');
       const fields = new FormData(form);
       output.hidden = false;
@@ -189,7 +189,7 @@ document.addEventListener('sections:loaded', async () => {
     });
     form.querySelector('[data-copy]')?.addEventListener('click', async () => {
       const output = form.querySelector('[data-request-output]');
-      try { await navigator.clipboard.writeText(output.value); form.querySelector('[role="status"]').textContent = 'Текст обращения скопирован. Данные никуда не отправлены.'; }
+      try { await navigator.clipboard.writeText(output.value); form.querySelector('[role="status"]').textContent = 'Текст обращения скопирован.'; }
       catch { output.focus(); output.select(); form.querySelector('[role="status"]').textContent = 'Выделили текст — скопируйте его вручную.'; }
     });
   });

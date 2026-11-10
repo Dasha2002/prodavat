@@ -20,14 +20,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/team/meeting.webp" />
     <link rel="icon" href="img/brand/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" /><link rel="stylesheet" href="prototypes/hero/variants.css" />
     <script src="js/design.js"></script>
   </head>
   <body data-root="" data-page="home">
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <div data-include="sections/header/header.html"></div>
     <main id="main">
-      <div data-include="sections/hero/hero.html"></div>
+      <div id="stage"><div data-include="sections/hero/hero.html"></div></div>
       <div data-include="sections/tasks/tasks.html"></div>
       <div data-include="sections/outcomes/outcomes.html"></div>
       <div data-include="sections/services/services.html"></div>
@@ -39,6 +39,7 @@
       <div data-include="sections/request/request.html"></div>
     </main>
     <div data-include="sections/footer/footer.html"></div>
+    <div data-include="prototypes/hero/picker.html"></div>
     <noscript
       ><p class="container">
         Для просмотра секций включите JavaScript. Сайт открывается через
@@ -49,5 +50,6 @@
     <script src="js/reviews.js"></script>
     <script src="js/hero.js"></script><script src="js/scroll-reveal.js"></script>
     <script src="js/include-sections.js"></script>
+    <script src="prototypes/hero/variants.js"></script>
   </body>
 </html>

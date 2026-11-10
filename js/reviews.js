@@ -192,6 +192,6 @@ document.addEventListener('sections:loaded', () => {
   form.addEventListener('submit', event => {
     event.preventDefault();
     if (!form.reportValidity()) return;
-    form.querySelector('[role="status"]').textContent = `Отзыв с оценкой ${selectedRating()} из 5 подготовлен. Это демонстрационная форма: данные не отправлены и отзыв не опубликован.`;
+    form.querySelector('[role="status"]').textContent = `Отзыв с оценкой ${selectedRating()} из 5 подготовлен.`;
   });
 });

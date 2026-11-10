@@ -26,7 +26,7 @@
 .inner-aside { min-width:0; align-self:start; }
 .inner-aside>.eyebrow { padding-top:12px; }
 .inner-aside__photo { margin-top:34px; max-width:300px; }
-.inner-aside__photo img { width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center 25%; }
+.inner-aside__photo img { width:100%; height:auto; object-fit:cover; object-position:center 25%; }
 [data-sticky-copy] { align-self:start; }
 .inner-inset-photo { margin-top:36px; max-width:420px; }
 .inner-inset-photo img { width:100%; height:310px; object-fit:cover; object-position:center 25%; }
@@ -37,13 +37,13 @@
 .inner-dark::after { content:""; position:absolute; z-index:-1; right:0; top:0; width:420px; height:100%; background:url('../img/brand/brand-mark.svg') right center/contain no-repeat; opacity:.18; pointer-events:none; }
 .inner-dark .eyebrow { color:#dca1b0; }
 .inner-dark .inner-lead { color:#ece6ed; }
-.inner-photo-section { background-size:cover; background-position:center 35%; }
+.inner-photo-section { background-size:cover; background-position:center 19%; }
 .inner-photo-section::after { display:none; }
-.inner-photo-section--o-nas { background-image:linear-gradient(90deg,#111e,#111d),url('../img/team/outcomes-background.webp'); }
+.inner-photo-section--o-nas { background-image:linear-gradient(185deg, #1111116b, #111111cf), url(../img/team/outcomes-background.webp); }
 .inner-photo-section--praktika { background-image:linear-gradient(90deg,#111e,#111d),url('../img/team/audit-background.webp'); }
 .inner-photo-section--formaty-raboty { background-image:linear-gradient(90deg,#111e,#111c),url('../img/team/meeting.webp'); }
-.inner-photo-section--audit-prodazh { background-image:linear-gradient(90deg,#111e,#111c),url('../img/team/collaboration.webp'); }
-.inner-photo-section--otdel-prodazh { background-image:linear-gradient(90deg,#111e,#111c),url('../img/team/request-background.webp'); }
+.inner-photo-section--audit-prodazh { background-image:linear-gradient(201deg, #11111147, #111c),url('../img/team/collaboration.webp'); }
+.inner-photo-section--otdel-prodazh { background-image:linear-gradient(201deg, #11111147, #111c), url(../img/team/request-background.webp) }
 .inner-principles { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
 .inner-principles article { border-top:1px solid var(--line); padding-top:24px; }
 .inner-principles article>span { color:#dca1b0; font-size:14px; font-variant-numeric:tabular-nums; }
