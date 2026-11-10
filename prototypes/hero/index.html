@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Прототип hero — proДАВАТЬ</title>
+  <link rel="icon" href="../../img/brand/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="variants.css">
+  <script src="../../js/design.js"></script>
+</head>
+<body data-root="../../" data-page="home">
+  <div data-include="../../sections/header/header.html"></div>
+  <main id="main">
+    <div id="stage"></div>
+    <div data-include="../../sections/tasks/tasks.html"></div>
+    <div data-include="../../sections/outcomes/outcomes.html"></div>
+    <div data-include="../../sections/services/services.html"></div>
+  </main>
+  <div data-include="../../sections/footer/footer.html"></div>
+
+  <nav class="proto-picker" aria-label="Prototype variants">
+    <span class="proto-picker-highlight" aria-hidden="true"></span>
+    <button class="proto-picker-item" data-active aria-current="true">Холст</button>
+    <button class="proto-picker-item">Триптих</button>
+    <button class="proto-picker-item">Панорама</button>
+    <button class="proto-picker-item">Плашка</button>
+    <button class="proto-picker-item">Строка</button>
+    <button class="proto-picker-item">Окно</button>
+    <button class="proto-picker-item">Фонарик</button>
+    <button class="proto-picker-item">Порядок</button>
+    <button class="proto-picker-item">Рычаг</button>
+    <button class="proto-picker-item">Сквозь</button>
+    <span class="proto-picker-divider" aria-hidden="true"></span>
+    <button class="proto-picker-item proto-picker-replay" aria-label="Replay animation (R)">↻</button>
+  </nav>
+
+  <script src="../../js/app.js"></script>
+  <script src="../../js/reviews.js"></script>
+  <script src="../../js/include-sections.js"></script>
+  <script src="variants.js"></script>
+</body>
+</html>
