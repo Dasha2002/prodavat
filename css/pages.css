@@ -69,7 +69,7 @@
   min-height: 500px;
 }
 .contact-hero__visual > .eyebrow::before {
-  background: #e0b4bd;
+  background: #6c0c1a;
 }
 
 .eyebrow-white {
@@ -86,7 +86,7 @@
 }
 .contact-hero__visual p:last-child {
   font-size: 15px;
-  color: #dfbfc5;
+  color: #fff;
   margin-top: 20px;
   max-width: 300px;
 }

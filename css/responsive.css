@@ -2,7 +2,7 @@
 .eyebrow{color:var(--accent);gap:0}
 .eyebrow::before,.eyebrow::after{content:none;display:none}
 :is(.outcomes,.request,.process,.services__item--accent,.request-modal) .eyebrow,
-[data-design=contrast] .hero .eyebrow{color:#d48b9b}
+[data-design=contrast] .hero .eyebrow{color:#fff}
 :is(.hero__grid,.outcomes__grid,.services__grid,.experts__grid,.cases__layout,.faq__grid,.request__grid)>*{min-width:0}
 .request__consent{font-size:14px;line-height:1.7}
 @media(max-width:1100px){

@@ -194,3 +194,31 @@ document.addEventListener('sections:loaded', async () => {
     });
   });
 });
+
+
+// One shared control, including pages with dynamically switched hero variants.
+document.addEventListener('sections:loaded', () => {
+  if (document.querySelector('.scroll-top')) return;
+  const button = document.createElement('button');
+  button.className = 'scroll-top';
+  button.type = 'button';
+  button.setAttribute('aria-label', 'Вернуться наверх');
+  button.innerHTML = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12 12 5l7 7M12 5v15" stroke="currentColor" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter"/></svg>';
+  button.inert = true;
+  document.body.append(button);
+  let frame = 0;
+  const update = () => {
+    frame = 0;
+    const hero = document.querySelector('#stage, main > section');
+    const visible = hero ? hero.getBoundingClientRect().bottom <= (document.querySelector('.header')?.offsetHeight || 0) : scrollY > innerHeight;
+    button.classList.toggle('is-visible', visible);
+    button.inert = !visible;
+  };
+  const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+  addEventListener('scroll', schedule, {passive:true});
+  addEventListener('resize', schedule);
+  const observedHero = document.querySelector('#stage, main > section');
+  if (observedHero) new ResizeObserver(schedule).observe(observedHero);
+  button.addEventListener('click', () => window.scrollTo({top:0, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'}));
+  update();
+});

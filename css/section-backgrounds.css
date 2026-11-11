@@ -6,8 +6,7 @@
 }
 .request {
   background-image:
-    linear-gradient(90deg, #141414e6, #141414c9),
-    url("../img/team/request-background.webp");
+     linear-gradient(175deg, rgba(20, 20, 20, 0.426), rgba(20, 20, 20, 0.79)), url(../img/team/request-background.webp);
   background-position: center 30%;
 }
 .services__item:not(.services__item--accent) {
@@ -23,7 +22,7 @@
   background-color: #211d1f;
 }
 .services__item:not(.services__item--accent) .text-link:hover {
-  color: #efc6d0;
+  color: #fff;
 }
 .request-modal__card::before {
   background-image:

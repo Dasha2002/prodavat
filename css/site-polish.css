@@ -1,5 +1,5 @@
 /* Swipeable review cards: three on desktop, two on tablet, one on mobile. */
-.reviews__carousel { --review-columns:3; --review-gap:20px; --review-card-height:330px; min-width:0; }
+.reviews__carousel { --review-columns:3; --review-gap:20px; --review-card-height:300px; min-width:0; }
 .reviews__cards { display:grid; grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:calc((100% - (var(--review-columns) - 1)*var(--review-gap))/var(--review-columns)); gap:var(--review-gap); height:var(--review-track-height,var(--review-card-height)); overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; scrollbar-width:none; transition:height .44s cubic-bezier(.22,1,.36,1); }
 .reviews__cards::-webkit-scrollbar { display:none; }
 .reviews__cards.is-dragging { cursor:grabbing; user-select:none; scroll-snap-type:none; }
@@ -51,3 +51,13 @@
 @media(prefers-reduced-motion:reduce) {
   .reviews__cards,.reviews__page::before { transition:none; }
 }
+
+:is(.request,.request-modal,.review-modal,.inner-dark,.services__item:not(.services__item--accent),.outcomes,.hero--editorial,.pano__stage) .button:not(.button--dark) { background:#6c0c1a; color:#fff; }
+:is(.request,.request-modal,.review-modal,.inner-dark,.services__item:not(.services__item--accent),.outcomes,.hero--editorial,.pano__stage) .button:not(.button--dark):is(:hover,:focus-visible) { background:#540914; color:#fff; }
+/* The top control appears only after the first screen has passed. */
+.scroll-top { position:fixed; right:24px; bottom:24px; z-index:45; display:grid; place-items:center; width:48px; height:48px; padding:0; background:#6c0c1a; color:#fff; cursor:pointer; opacity:0; visibility:hidden; transform:translateY(12px); pointer-events:none; transition:opacity .25s,visibility .25s,transform .25s,background-color .25s; }
+.scroll-top.is-visible { opacity:1; visibility:visible; transform:none; pointer-events:auto; }
+.scroll-top:is(:hover,:focus-visible) { background:#540914; }
+.scroll-top svg { width:23px; height:23px; }
+@media(max-width:600px) { .scroll-top { right:16px; bottom:24px; width:44px; height:44px; } body[data-page=home] .scroll-top { bottom:64px; } }
+@media(prefers-reduced-motion:reduce) { .scroll-top { transition:none; } }

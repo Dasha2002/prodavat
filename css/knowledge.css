@@ -29,9 +29,9 @@
   .knowledge__filters button { padding:10px 16px; }
 }
 
-.knowledge-card:focus-within { z-index:1; background:#f0c5ce; border-top-color:#191719; box-shadow:0 16px 32px #41101d18; transform:translateY(-4px) scale(1.018); }
+.knowledge-card:focus-within { z-index:1; background:#3d4045; color:#fff; border-top-color:#191719; box-shadow:0 16px 32px #41101d18; transform:translateY(-4px) scale(1.018); }
 @media(hover:hover) and (pointer:fine) {
-  .knowledge-card:hover { z-index:1; background:#edc8d077; border-top-color:#191719; box-shadow:0 16px 32px #41101d18; transform:translateY(-4px) scale(1.018); }
+  .knowledge-card:hover { z-index:1; background:#3d4045; color:#fff; border-top-color:#191719; box-shadow:0 16px 32px #41101d18; transform:translateY(-4px) scale(1.018); }
 }
 @media(max-width:1100px) {
   .hero--knowledge .hero-editorial__scene { grid-template-columns:54% 46%; }
@@ -50,3 +50,6 @@
   .knowledge-card { transition:none; }
   .knowledge-card:hover,.knowledge-card:focus-within { transform:none; }
 }
+
+.knowledge-card:is(:hover,:focus-within) :is(h3,p,span,time,.knowledge-card__footer) { color:#fff; }
+.knowledge-card:is(:hover,:focus-within) .knowledge-card__footer { border-color:#ffffff50; }

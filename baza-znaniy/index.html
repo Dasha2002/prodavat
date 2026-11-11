@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/interior.css" />
     <link rel="stylesheet" href="../css/knowledge.css" />
+    <link rel="stylesheet" href="../prototypes/hero/variants.css" />
     <script src="../js/design.js"></script>
   </head>
   <body class="interior-page" data-root="../" data-page="knowledge">
@@ -26,18 +27,29 @@
     <div data-include="../sections/header/header.html"></div>
     <main id="main">
       
-      <section class="hero hero--editorial hero--knowledge" aria-labelledby="knowledge-title">
-        <div class="hero-editorial__scene">
-          <img class="hero-editorial__photo" src="../img/team/DSC_6667.jpg" width="2500" height="1669" alt="Команда proДАВАТЬ — совместный деловой портрет" fetchpriority="high">
-          <div class="hero-editorial__panel">
-            <p class="eyebrow">База знаний</p>
-            <h1 id="knowledge-title"><span>Знания </span><span>для </span><span>решений</span></h1>
-            <p class="hero-editorial__intro">Разбираем продажи, процессы и работу команды. Практические материалы для собственников и руководителей</p>
-            <a class="button button--dark" href="#materials">Перейти к темам</a>
-          </div>
-          <p class="hero-editorial__note">От вопроса<br>к пониманию</p>
-        </div>
-      </section>
+      <div id="stage" data-page-hero="lever"><section class="lever">
+    <div class="container">
+      <p class="eyebrow hv-in">База знаний</p>
+      <h1 class="hv-in" style="--d:60ms">Знания, которые помогают <em>управлять</em></h1>
+      <figure class="lever__chart hv-in" style="--d:120ms">
+        <svg viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true">
+          <g class="lever__grid"><line x1="0" x2="1200" y1="60" y2="60"/><line x1="0" x2="1200" y1="150" y2="150"/><line x1="0" x2="1200" y1="240" y2="240"/><line x1="0" x2="1200" y1="330" y2="330"/></g>
+          <path class="lever__area"/>
+          <path class="lever__line"/>
+        </svg>
+        <figcaption>Схема</figcaption>
+      </figure>
+      <div class="lever__controls hv-in" style="--d:180ms">
+        <span>Вопрос</span>
+        <input class="lever__range" type="range" min="0" max="100" value="0" aria-label="От понимания к действиям">
+        <span>Решение</span>
+      </div>
+      <div class="lever__bottom hv-in" style="--d:220ms">
+        <p class="lever__state" aria-live="polite">Начните с вопроса, который сейчас важен для вашего отдела продаж</p>
+        <div class="hv-actions"><a class="button" href="../kontakty/#request">Обсудить задачу</a><a class="hv-link" href="#materials">Читать статьи</a></div>
+      </div>
+    </div>
+  </section></div>
       
 <nav class="breadcrumbs container" aria-label="Хлебные крошки">
         <a href="../index.html">Главная</a><span aria-hidden="true">/</span
@@ -194,5 +206,6 @@
     <script src="../js/app.js"></script><script src="../js/decor-parallax.js"></script>
     <script src="../js/knowledge.js"></script>
     <script src="../js/include-sections.js"></script>
+  <script src="../prototypes/hero/variants.js" defer></script>
   </body>
 </html>

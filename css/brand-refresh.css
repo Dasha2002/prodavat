@@ -3,7 +3,7 @@
 .outcomes .brand-icon { margin-bottom:22px; }
 :is(.outcomes,.process,.services__item) .brand-icon { filter:brightness(0) invert(1); }
 .process__step-top { display:flex; justify-content:space-between; align-items:center; gap:20px; }
-.process__step-top > span { font-size:30px; font-variant-numeric:tabular-nums; color:#e7b8c3; }
+.process__step-top > span { font-size:30px; font-variant-numeric:tabular-nums; color:#fff; }
 .services__item > .button { align-self:flex-start; margin-top:auto; max-width:100%; text-align:center; }
 .button--dark { background:#171719; color:#fff; }
 .button--dark:hover { background:#333336; color:#fff; }
@@ -36,7 +36,7 @@
 .footer__top p { font-size:32px; line-height:1.25; }
 .footer__top nav { padding-top:6px; }
 .footer__bottom { color:#c9c5cb; line-height:1.7; }
-.footer a:hover { color:#e3a1b0; }
+.footer a:hover { color:#fff; }
 @media (max-width:1100px) {
   .hero__grid { min-height:720px; gap:28px; }
   .hero__content { padding-block:48px 60px; }

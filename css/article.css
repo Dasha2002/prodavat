@@ -19,7 +19,7 @@
 .article__body>p,.article__body section>p { margin-bottom:24px; }
 .article__body section { padding-top:44px; scroll-margin-top:132px; }
 .article__body h2 { font-size:clamp(29px,3vw,42px); line-height:1.18; letter-spacing:-.035em; margin-bottom:26px; }
-.article__body blockquote { margin:36px 0 0; padding:30px 34px; background:#f0c5ce; border-left:3px solid var(--accent); font:400 29px/1.4 var(--display); letter-spacing:-.025em; }
+.article__body blockquote { margin:36px 0 0; padding:30px 34px; background:#ececef; border-left:3px solid var(--accent); font:400 29px/1.4 var(--display); letter-spacing:-.025em; }
 .article__body ul { margin:28px 0; }
 .article__body li { position:relative; border-top:1px solid var(--line); padding:18px 0 18px 26px; }
 .article__body li::before { content:""; position:absolute; left:0; top:30px; width:6px; height:6px; background:var(--accent); }

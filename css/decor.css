@@ -15,7 +15,7 @@
 }
 .outcomes .eyebrow::before,
 .request .eyebrow::before {
-  background: #cc8795;
+  background: #fff;
 }
 .request__form input::placeholder,
 .request__form textarea::placeholder {
@@ -28,10 +28,10 @@
   border-color: #a19a9f;
 }
 .request__status {
-  color: #e9b9c4;
+  color: #fff;
 }
 .request :focus-visible {
-  outline-color: #e9b9c4;
+  outline-color: #fff;
 }
 .services__item:not(.services__item--accent) li {
   border-color: #ffffff30;

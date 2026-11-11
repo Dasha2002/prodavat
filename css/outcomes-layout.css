@@ -36,8 +36,8 @@
   transition: color .3s ease;
 }
 @media (hover: hover) {
-  .outcomes__list article:hover h3 { color: #f0c5ce; }
-  .outcomes__list article:hover::before { background-color: #f0c5ce; }
+  .outcomes__list article:hover h3 { color: #fff; }
+  .outcomes__list article:hover::before { background-color: #fff; }
 }
 @media (prefers-reduced-motion: reduce) {
   .outcomes__list article::before,

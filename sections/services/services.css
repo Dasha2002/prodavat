@@ -50,7 +50,7 @@
   border-color: #ffffff40;
 }
 .services__item--accent .text-link:hover {
-  color: #edc1c9;
+  color: #fff;
 }
 .services__note {
   margin-top: 26px;
@@ -98,14 +98,14 @@
   position: absolute;
   inset: 0 0 auto;
   height: 2px;
-  background: #bd6677;
+  background: #fff;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
 .services__item--accent::before {
-  background: #f3c9d2;
+  background: #fff;
 }
 @media (hover: hover) and (pointer: fine) {
   .services__item:hover {

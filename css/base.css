@@ -129,6 +129,13 @@ p {
   font-size: 16px;
   font-weight: 500;
 }
+
+.button-request {
+  background: #6c0c1a;
+}
+.button-request:hover {
+  background: #540914 !important;
+}
 .button:hover {
   background: #6c0c1a;
 }
@@ -175,7 +182,7 @@ p {
   transform: none;
 }
 .load-error {
-  background: #fbe8e8;
+  background: #ececef;
   padding: 20px;
 }
 .breadcrumbs {

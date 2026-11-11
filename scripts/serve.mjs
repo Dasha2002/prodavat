@@ -14,3 +14,5 @@ const server = createServer(async (req, res) => {
   } catch { res.writeHead(404, {'Content-Type':'text/html; charset=utf-8'}); res.end(await readFile(resolve(root, '404.html'))); }
 });
 server.listen(5506, '127.0.0.1', () => console.log('Local: http://127.0.0.1:5506'));
+
+

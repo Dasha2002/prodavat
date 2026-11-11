@@ -18,26 +18,28 @@
     <link rel="icon" href="../img/brand/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/interior.css" />
+    <link rel="stylesheet" href="../prototypes/hero/variants.css" />
     <script src="../js/design.js"></script>
+    <script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('order-pending');</script>
   </head>
   <body class="interior-page" data-root="../" data-page="practice">
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <div data-include="../sections/header/header.html"></div>
     <main id="main">
 
-      <section class="inner-hero">
-        <div class="container inner-hero__intro">
-          <p class="eyebrow">Практика</p>
-          <h1>
-            От задачи бизнеса<br />
-            к <em>понятным действиям</em>
-          </h1>
-          <p class="inner-lead">
-            Показываем логику работы: какой вопрос разбираем, что меняем и как
-            договариваемся о результате.
-          </p>
-        </div>
-      </section>
+      <div id="stage" data-page-hero="order"><section class="order is-ordered">
+    <div class="container">
+      <p class="eyebrow">Практика</p>
+      <h1>От задачи бизнеса <em>к работающей системе</em></h1>
+      <ol class="order__grid">
+        <li class="order__chip"><span>01</span>Стратегия</li><li class="order__chip"><span>02</span>Воронка</li><li class="order__chip"><span>03</span>CRM</li><li class="order__chip"><span>04</span>Скрипты</li><li class="order__chip"><span>05</span>Регламенты</li><li class="order__chip"><span>06</span>Найм</li><li class="order__chip"><span>07</span>Обучение</li><li class="order__chip"><span>08</span>Мотивация</li><li class="order__chip"><span>09</span>Планы</li><li class="order__chip"><span>10</span>KPI</li><li class="order__chip"><span>11</span>Отчёты</li><li class="order__chip"><span>12</span>Контроль</li>
+      </ol>
+      <div class="order__foot">
+        <p class="order__lead">Разбираем типичные задачи производственного бизнеса: что мешает продажам, какие изменения нужны и как оценить результат.</p>
+        <div class="hv-actions"><a class="button" href="../kontakty/#request">Обсудить задачу</a><a class="hv-link" href="#situations">Смотреть разборы</a></div>
+      </div>
+    </div>
+  </section></div>
 
 <nav class="breadcrumbs container" aria-label="Хлебные крошки">
         <a href="../index.html">Главная</a><span aria-hidden="true">/</span
@@ -54,7 +56,7 @@
             </h2>
           </div>
 
-          <div class="inner-scenarios">
+          <div class="inner-scenarios" id="situations">
             <details class="inner-scenario" name="practice-scenarios" open>
               <summary>
                 <span>01</span>
@@ -232,5 +234,6 @@
     <script src="../js/app.js"></script><script src="../js/decor-parallax.js"></script>
     <script src="../js/interior.js"></script>
     <script src="../js/scroll-reveal.js"></script><script src="../js/include-sections.js"></script>
+  <script src="../prototypes/hero/variants.js" defer></script>
   </body>
 </html>

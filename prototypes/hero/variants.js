@@ -120,7 +120,7 @@ function initSpotlight(stage) {
 /* 6. Порядок */
 function initOrder(stage) {
   const sec = stage.querySelector('.order');
-  if (reduceMotion) return null;
+  if (reduceMotion) { document.documentElement.classList.remove('order-pending'); return null; }
   const box = sec.getBoundingClientRect();
   sec.classList.add('is-measuring');
   sec.querySelectorAll('.order__chip').forEach((chip, i) => {
@@ -135,6 +135,7 @@ function initOrder(stage) {
   sec.classList.remove('is-ordered');
   void sec.offsetHeight;
   sec.classList.remove('is-measuring');
+  document.documentElement.classList.remove('order-pending');
   const t = setTimeout(() => sec.classList.add('is-ordered'), 750);
   return () => clearTimeout(t);
 }
@@ -146,7 +147,11 @@ function initLever(stage) {
   const line = sec.querySelector('.lever__line');
   const area = sec.querySelector('.lever__area');
   const state = sec.querySelector('.lever__state');
-  const states = [
+  const states = document.body.dataset.page === 'knowledge' ? [
+    'Начните с вопроса, который сейчас важен для вашего отдела продаж',
+    'Разберитесь в причинах и выберите подход к изменениям',
+    'Переведите знания в понятные действия собственника и команды',
+  ] : [
     'Выручка скачет от месяца к месяцу, и непонятно, на что влиять',
     'Появляются процессы, роли и регулярное управление',
     'Команда работает системно, а вы занимаетесь развитием бизнеса',
@@ -233,7 +238,7 @@ function initThrough(stage) {
 }
 
 const EXPERT = `${ROOT}img/team/experts.jpg`;
-const desc = 'Находим причины потерь в продажах и помогаем выстроить процессы, чтобы команда работала системно, а собственник мог заниматься развитием бизнеса.';
+const desc = 'Помогаем производственному бизнесу реализовать потенциал: находим ограничения продаж, собираем команду и сопровождаем внедрение, чтобы разгрузить собственника.';
 
 const chips = ['Стратегия', 'Воронка', 'CRM', 'Скрипты', 'Регламенты', 'Найм', 'Обучение', 'Мотивация', 'Планы', 'KPI', 'Отчёты', 'Контроль'];
 
@@ -246,7 +251,7 @@ const variants = [
       <div class="canvas__text">
         <p class="eyebrow hv-in">Стратегия. Продажи. Развитие.</p>
         <h1 class="hv-in" style="--d:60ms">Продажи,<br>которыми можно<br><mark class="hv-mark" style="--d:520ms">управлять</mark></h1>
-        <p class="canvas__lead hv-in" style="--d:140ms">Аудит, построение и развитие отдела продаж</p>
+        <p class="canvas__lead hv-in" style="--d:140ms">Системные продажи для производственных компаний</p>
         <p class="canvas__desc hv-in" style="--d:180ms">${desc}</p>
         <div class="hv-actions hv-in" style="--d:220ms">${actions()}</div>
       </div>
@@ -261,7 +266,7 @@ const variants = [
       <h1 class="hv-in" style="--d:60ms">Продажи, которыми можно <mark class="hv-mark" style="--d:520ms">управлять</mark></h1>
       <div class="trip__grid">
         <div class="trip__col hv-in" style="--d:220ms">
-          <p class="trip__lead">Аудит, построение и развитие отдела продаж</p>
+          <p class="trip__lead">Системные продажи для производственных компаний</p>
           <p class="trip__desc">${desc}</p>
           <a class="button" href="${ROOT}kontakty/#request">Обсудить вашу задачу</a>
         </div>
@@ -285,8 +290,8 @@ const variants = [
       <img class="pano__img hv-fade" style="--d:120ms" src="${ROOT}img/team/DSC_6588.jpg" width="2500" height="1669" alt="Эксперты proДАВАТЬ" fetchpriority="high">
       <div class="container pano__sides">
         <div class="pano__side hv-in" style="--d:260ms">
-          <p class="pano__lead">Аудит, построение и развитие отдела продаж</p>
-          <p class="pano__desc">Находим причины потерь и выстраиваем процессы, чтобы команда работала системно.</p>
+          <p class="pano__lead">Системные продажи для производственных компаний</p>
+          <p class="pano__desc">Находим ограничения роста, формируем команду и снижаем зависимость продаж от собственника.</p>
           <a class="button" href="${ROOT}kontakty/#request">Обсудить вашу задачу</a>
         </div>
         <nav class="pano__side pano__side--right hv-in" style="--d:320ms" aria-label="Форматы работы">
@@ -304,7 +309,7 @@ const variants = [
       <div class="plate__card hv-in" style="--d:160ms">
         <p class="eyebrow">Стратегия. Продажи. Развитие.</p>
         <h1>Продажи, которыми можно <mark class="hv-mark" style="--d:620ms">управлять</mark></h1>
-        <p class="plate__lead">Аудит, построение и развитие отдела продаж. Находим причины потерь и помогаем выстроить процессы, чтобы команда работала системно.</p>
+        <p class="plate__lead">Системные продажи для производственных компаний. Находим причины потерь и помогаем выстроить процессы, чтобы команда работала системно.</p>
         <div class="hv-actions">${actions(' hv-link--light')}</div>
       </div>
     </div>
@@ -323,7 +328,7 @@ const variants = [
         <span class="inline__pic inline__pic--duo hv-open" style="--d:360ms"><img src="${ROOT}img/team/DSC_6768.jpg" width="2500" height="1669" alt=""></span>
         <mark class="hv-mark" style="--d:560ms">управлять</mark></h1>
       <div class="inline__row hv-in" style="--d:200ms">
-        <p class="inline__lead">Находим причины потерь в продажах и выстраиваем процессы, чтобы команда работала системно, а собственник занимался развитием бизнеса.</p>
+        <p class="inline__lead">Помогаем собственнику производственной компании связать продажи, команду и управление в работающую систему.</p>
         <nav class="inline__formats" aria-label="Форматы работы">${formats}</nav>
         <div class="inline__cta">
           <a class="button" href="${ROOT}kontakty/#request">Обсудить вашу задачу <span class="button__arrow" aria-hidden="true">→</span></a>
@@ -346,7 +351,7 @@ const variants = [
       <div class="container win__end">
         <p class="eyebrow">Стратегия. Продажи. Развитие.</p>
         <p class="win__end-title" aria-hidden="true">Продажи, которыми можно <em>управлять</em></p>
-        <p class="win__lead">Аудит, построение и развитие отдела продаж. Находим причины потерь и помогаем выстроить процессы.</p>
+        <p class="win__lead">Системные продажи для производственных компаний. Находим ограничения роста и сопровождаем изменения в процессах и команде.</p>
         <div class="hv-actions">${actions(' hv-link--light')}</div>
       </div>
       <p class="win__hint" aria-hidden="true">Листайте вниз</p>
@@ -360,7 +365,7 @@ const variants = [
     <div class="container spot__content">
       <p class="eyebrow hv-in">Видим то, что скрыто</p>
       <h1 class="hv-in" style="--d:60ms">Продажи, которыми можно <em>управлять</em></h1>
-      <p class="spot__lead hv-in" style="--d:120ms">Аудит, построение и развитие отдела продаж. Находим причины потерь там, где их не видно изнутри.</p>
+      <p class="spot__lead hv-in" style="--d:120ms">Системные продажи для производственных компаний. Находим причины потерь там, где их не видно изнутри.</p>
       <div class="hv-actions hv-in" style="--d:180ms">${actions(' hv-link--light')}</div>
     </div>
     <p class="spot__hint hv-in" style="--d:600ms" aria-hidden="true">Наведите курсор на фото</p>
@@ -375,7 +380,7 @@ const variants = [
         ${chips.map((c, i) => `<li class="order__chip"><span>${String(i + 1).padStart(2, '0')}</span>${c}</li>`).join('')}
       </ol>
       <div class="order__foot">
-        <p class="order__lead">Аудит, построение и развитие отдела продаж. Связываем процессы, роли, инструменты и управление в одну систему.</p>
+        <p class="order__lead">Системные продажи для производственных компаний. Собираем команду, процессы и управление, чтобы собственник мог заниматься развитием производства.</p>
         <div class="hv-actions">${actions()}</div>
       </div>
     </div>
@@ -413,21 +418,45 @@ const variants = [
       <h1 class="hv-in" style="--d:60ms">Продажи, которыми<br>можно<span class="thru__sr"> управлять</span></h1>
     </div>
     <figure class="thru__fig">
-      <img class="thru__img hv-fade" src="${EXPERT}" width="1707" height="2560" alt="Эксперт proДАВАТЬ" fetchpriority="high">
+      <img class="thru__img hv-fade" src="${ROOT}img/team/hero-team-cutout.webp" width="1408" height="1117" alt="Елена и Анастасия — эксперты proДАВАТЬ" fetchpriority="high">
       <div class="thru__track" aria-hidden="true">
         <div class="thru__strip">${'<span>управлять</span>'.repeat(6)}</div>
       </div>
-      <img class="thru__img thru__img--front hv-fade" src="${EXPERT}" width="1707" height="2560" alt="">
+      <img class="thru__img thru__img--front hv-fade" src="${ROOT}img/team/hero-team-cutout.webp" width="1408" height="1117" alt="">
     </figure>
     <div class="container thru__foot">
       <div class="thru__cta hv-in" style="--d:240ms">
-        <p class="thru__lead">Аудит, построение и развитие отдела продаж. Находим причины потерь и выстраиваем процессы, чтобы команда работала системно.</p>
+        <p class="thru__lead">Системные продажи для производственных компаний. Находим ограничения роста, формируем команду и снижаем зависимость продаж от собственника.</p>
         <div class="hv-actions">${actions()}</div>
       </div>
       <nav class="thru__formats hv-in" style="--d:320ms" aria-label="Форматы работы">${formats}</nav>
     </div>
   </section>`, init: initThrough },
 ];
+
+function startPageHero() {
+  const host = document.querySelector('[data-page-hero]');
+  if (!host) return false;
+  const knowledge = host.dataset.pageHero === 'lever';
+  let html = variants[knowledge ? 9 : 8].html();
+  if (knowledge) {
+    html = html.replace('Стратегия. Продажи. Развитие.', 'База знаний')
+      .replace('Продажи, которыми можно <em>управлять</em>', 'Знания, которые помогают <em>управлять</em>')
+      .replace('Системность продаж', 'От понимания к действиям')
+      .replace('>Хаос<', '>Вопрос<').replace('>Система<', '>Решение<')
+      .replace('Обсудить вашу задачу', 'Обсудить задачу')
+      .replace('href="#services"', 'href="#materials"').replace('Выбрать формат работы', 'Читать статьи');
+  } else {
+    html = html.replace('Из хаоса — в систему', 'Практика')
+      .replace('Продажи, которыми можно <em>управлять</em>', 'От задачи бизнеса <em>к работающей системе</em>')
+      .replace('Системные продажи для производственных компаний. Собираем команду, процессы и управление, чтобы собственник мог заниматься развитием производства.', 'Разбираем типичные задачи производственного бизнеса: что мешает продажам, какие изменения нужны и как оценить результат.')
+      .replace('href="#services"', 'href="#situations"').replace('Выбрать формат работы', 'Смотреть разборы');
+  }
+  if (!host.querySelector('section')) host.innerHTML = html;
+  variants[knowledge ? 9 : 8].init?.(host);
+  syncHeader();
+  return true;
+}
 
 async function startVariants() {
   const ready = document.querySelector('.proto-picker')
@@ -505,4 +534,6 @@ setActive(Math.max(0, Math.min(variants.length - 1, requested - 1)));
 requestAnimationFrame(() => requestAnimationFrame(() => picker.setAttribute('data-ready', '')));
 
 }
-startVariants().catch(error => console.error(error));
+if (document.querySelector('[data-page-hero]')) {
+  startPageHero();
+} else startVariants().catch(error => console.error(error));

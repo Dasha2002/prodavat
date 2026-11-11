@@ -87,22 +87,22 @@
   color: white;
 }
 [data-design="contrast"] .hero h1 em {
-  color: #e3b6be;
+  color: #fff;
 }
 [data-design="contrast"] .hero__description,
 [data-design="contrast"] .hero__foot,
 [data-design="contrast"] .hero__baseline {
-  color: #e2bdc4;
+  color: #fff;
 }
 [data-design="contrast"] .hero .eyebrow::before {
-  background: #e3b6be;
+  background: #fff;
 }
 [data-design="contrast"] .hero .button {
   background: var(--paper);
   color: var(--accent);
 }
 [data-design="contrast"] .hero .button:hover {
-  background: #e7d9dd;
+  background: #e1e1e3;
 }
 [data-design="contrast"] .hero__foot > a {
   color: white;

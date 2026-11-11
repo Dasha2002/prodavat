@@ -1,7 +1,7 @@
 /* Quiet hover feedback, without changing layout or suggesting a clickable card. */
 .tasks__rows article,.cases__chapters li,.process__steps li{position:relative}
 .tasks__rows article::before,.cases__chapters li::before,.process__steps li::before{content:'';position:absolute;top:-1px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;pointer-events:none;transition:transform .38s cubic-bezier(.22,1,.36,1)}
-.process__steps li::before{background:#f0c5ce}
+.process__steps li::before{background:#fff}
 .tasks__rows article>span,.cases__chapters li>span,.process__steps li>span{display:inline-block;transition:transform .32s cubic-bezier(.22,1,.36,1),color .28s ease}
 .tasks__rows h3,.cases__chapters h3,.process__steps h3{transition:transform .32s cubic-bezier(.22,1,.36,1),color .28s ease}
 .tasks__rows p,.cases__chapters li p,.process__steps li p{transition:transform .38s cubic-bezier(.22,1,.36,1)}
@@ -10,7 +10,7 @@
   .tasks__rows article:hover>span,.cases__chapters li:hover>span,.process__steps li:hover>span{transform:translateY(-2px)}
   .tasks__rows article:hover h3,.cases__chapters li:hover h3{color:var(--accent);transform:translateX(5px)}
   .tasks__rows article:hover p,.cases__chapters li:hover p{transform:translateX(5px)}
-  .process__steps li:hover h3{color:#f0c5ce;transform:translateY(-4px)}
+  .process__steps li:hover h3{color:#fff;transform:translateY(-4px)}
   .process__steps li:hover p{transform:translateY(-4px)}
 }
 @media(prefers-reduced-motion:reduce){

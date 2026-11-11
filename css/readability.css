@@ -115,12 +115,12 @@
 .request__form input:not([type="checkbox"]):focus,
 .request__form textarea:focus {
   outline: none;
-  border-color: #e6b6c1;
+  border-color: #fff;
   background: #ffffff16;
   box-shadow: none;
 }
 .request__form input[aria-invalid="true"] {
-  border-color: #f1a5b5;
+  border-color: #fff;
   background: #8d122326;
 }
 .request__consent {
