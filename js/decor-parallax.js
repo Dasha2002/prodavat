@@ -40,3 +40,30 @@ document.addEventListener('sections:loaded', () => {
     schedule();
   });
 });
+
+// Subtle portrait movement: text and card positions remain stable.
+document.addEventListener('sections:loaded', () => {
+ const photos = [...document.querySelectorAll('[data-expert-portrait]')];
+ if (!photos.length) return;
+ const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+ const visible = new Set();
+ let frame = 0;
+ const update = () => {
+  frame = 0;
+  photos.forEach(photo => photo.classList.toggle('is-portrait-parallax', !reduced.matches && innerWidth > 700));
+  if (reduced.matches || innerWidth <= 700 || document.hidden) return;
+  visible.forEach(photo => {
+   const rect = photo.getBoundingClientRect();
+   const shift = Math.max(-12,Math.min(12,(innerHeight / 2 - rect.top - rect.height / 2) * .035));
+   photo.style.setProperty('--portrait-shift', `${shift.toFixed(2)}px`);
+  });
+ };
+ const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+ const observer = new IntersectionObserver(entries => { entries.forEach(entry => entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target)); schedule(); });
+ photos.forEach(photo => observer.observe(photo));
+ addEventListener('scroll',schedule,{passive:true});
+ addEventListener('resize',schedule,{passive:true});
+ document.addEventListener('visibilitychange',schedule);
+ reduced.addEventListener('change',schedule);
+ update();
+});

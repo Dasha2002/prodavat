@@ -1,6 +1,6 @@
 /* Interior pages extend the typography, palette and components of the home page. */
 .interior-page main { overflow:clip; }
-.interior-page .breadcrumbs { flex-wrap:wrap; font-size:13px; line-height:1.7; gap:10px; padding-top:30px; }
+.interior-page .breadcrumbs { flex-wrap:wrap; font-size:13px; line-height:1.7; gap:10px; padding-top:30px; width: 100%; padding-left: 30px; background: #eae9ec80;}
 .inner-hero { padding:64px 0 84px; background:#fff; }
 .inner-hero h1 { font-size:clamp(46px,5.4vw,76px); line-height:1.04; margin:28px 0 30px; letter-spacing:-.05em; }
 .inner-hero h1 em { font-style:normal; color:var(--accent); }

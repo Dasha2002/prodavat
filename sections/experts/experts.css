@@ -1,7 +1,134 @@
-.experts{border-top:0}.experts__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.experts__photo img{width:100%;aspect-ratio:1.15;object-fit:cover;object-position:58% 50%}.experts__statement{font:32px/1.2 var(--display);letter-spacing:-.035em;margin-bottom:28px}.experts__statement em{font-style:normal;color:var(--accent)}.experts__text>p:not(.experts__statement){font-size:16px;color:var(--muted);margin-bottom:18px;max-width:430px}.experts__text .text-link{margin-top:18px}@media(max-width:900px){.experts__grid{gap:35px}.experts__statement{font-size:28px}}@media(max-width:560px){.experts__grid{grid-template-columns:1fr;gap:28px}.experts__photo img{aspect-ratio:1.2}.experts__statement{font-size:30px}}
-/* The copy follows the taller portrait only within this section. */
-@media(min-width:901px) and (min-height:700px){
-  .experts__grid{align-items:start}
-  .experts__photo img{height:auto;aspect-ratio:4/5;object-position:58% center}
-  .experts__text{position:sticky;top:126px;align-self:start;padding-block:12px}
+.experts {
+  border-top: 0;
+}
+
+/* Intro statement — теперь живёт над сеткой карточек */
+.experts__intro {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.experts__statement {
+  font: 32px/1.2 var(--display);
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.experts__statement em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* Две карточки экспертов */
+.experts__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.experts__card {
+  display: flex;
+  flex-direction: column;
+}
+
+.experts__photo {
+  margin: 0 0 28px;
+}
+
+.experts__photo img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: 58% center;
+}
+
+.experts__name {
+  font: 30px/1.1 var(--display);
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+
+.experts__role {
+  font-size: 14px;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+
+.experts__bio {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 22px;
+}
+
+/* Направления экспертизы */
+.experts__facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experts__facts li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.experts__facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.experts__cta {
+  margin-top: 56px;
+}
+
+
+@media (max-width: 900px) {
+  .experts__intro {
+    margin-bottom: 40px;
+  }
+  .experts__statement {
+    font-size: 28px;
+  }
+  .experts__grid {
+    gap: 40px;
+  }
+  .experts__name {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 560px) {
+  .experts__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .experts__statement {
+    font-size: 26px;
+  }
+  .experts__photo img {
+    aspect-ratio: 5/6;
+  }
+  .experts__cta {
+    margin-top: 40px;
+  }
+}
+
+.experts__card {
+  display: flex;
+  flex-direction: column;
+  will-change: transform; /* плавность для параллакса */
 }

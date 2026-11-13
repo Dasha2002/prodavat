@@ -25,36 +25,64 @@
   <body class="interior-page" data-root="../" data-page="knowledge">
     <a class="skip-link" href="#main">Перейти к содержимому</a>
     <div data-include="../sections/header/header.html"></div>
-    <main id="main">
-      
-      <div id="stage" data-page-hero="lever"><section class="lever">
-    <div class="container">
-      <p class="eyebrow hv-in">База знаний</p>
-      <h1 class="hv-in" style="--d:60ms">Знания, которые помогают <em>управлять</em></h1>
-      <figure class="lever__chart hv-in" style="--d:120ms">
-        <svg viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true">
-          <g class="lever__grid"><line x1="0" x2="1200" y1="60" y2="60"/><line x1="0" x2="1200" y1="150" y2="150"/><line x1="0" x2="1200" y1="240" y2="240"/><line x1="0" x2="1200" y1="330" y2="330"/></g>
-          <path class="lever__area"/>
-          <path class="lever__line"/>
-        </svg>
-        <figcaption>Схема</figcaption>
-      </figure>
-      <div class="lever__controls hv-in" style="--d:180ms">
-        <span>Вопрос</span>
-        <input class="lever__range" type="range" min="0" max="100" value="0" aria-label="От понимания к действиям">
-        <span>Решение</span>
-      </div>
-      <div class="lever__bottom hv-in" style="--d:220ms">
-        <p class="lever__state" aria-live="polite">Начните с вопроса, который сейчас важен для вашего отдела продаж</p>
-        <div class="hv-actions"><a class="button" href="../kontakty/#request">Обсудить задачу</a><a class="hv-link" href="#materials">Читать статьи</a></div>
-      </div>
-    </div>
-  </section></div>
-      
-<nav class="breadcrumbs container" aria-label="Хлебные крошки">
+    <nav class="breadcrumbs container" aria-label="Хлебные крошки">
         <a href="../index.html">Главная</a><span aria-hidden="true">/</span
         ><span aria-current="page">База знаний</span>
       </nav>
+    <main id="main">
+      
+      <!--
+      <div id="stage" data-page-hero="lever">
+        <section class="lever">
+          <div class="container">
+            <p class="eyebrow hv-in">База знаний</p>
+            <h1 class="hv-in" style="--d: 60ms">
+              Знания, которые помогают <em>управлять</em>
+            </h1>
+            <figure class="lever__chart hv-in" style="--d: 120ms">
+              <svg
+                viewBox="0 0 1200 360"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <g class="lever__grid">
+                  <line x1="0" x2="1200" y1="60" y2="60" />
+                  <line x1="0" x2="1200" y1="150" y2="150" />
+                  <line x1="0" x2="1200" y1="240" y2="240" />
+                  <line x1="0" x2="1200" y1="330" y2="330" />
+                </g>
+                <path class="lever__area" />
+                <path class="lever__line" />
+              </svg>
+              <figcaption>Схема</figcaption>
+            </figure>
+            <div class="lever__controls hv-in" style="--d: 180ms">
+              <span>Вопрос</span>
+              <input
+                class="lever__range"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="От понимания к действиям"
+              />
+              <span>Решение</span>
+            </div>
+            <div class="lever__bottom hv-in" style="--d: 220ms">
+              <p class="lever__state" aria-live="polite">
+                Начните с вопроса, который сейчас важен для вашего отдела продаж
+              </p>
+              <div class="hv-actions">
+                <a class="button" href="../kontakty/#request">Обсудить задачу</a
+                ><a class="hv-link" href="#materials">Читать статьи</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      -->
+
+      
 
       <section class="section" id="materials">
         <div class="container">
@@ -63,8 +91,7 @@
             <h2>Что важно знать<br />о системных продажах</h2>
           </div>
           <p class="knowledge__intro">
-            Практические материалы о процессах, управлении продажами и работе
-            команды. Выберите тему, с которой хотите разобраться.
+            Статьи о воронке, CRM, работе менеджеров и управлении отделом.
           </p>
           <div
             class="knowledge__filters"
@@ -97,83 +124,124 @@
             6 материалов
           </p>
           <div class="knowledge__grid">
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="management">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="management"
+            >
               <div class="knowledge-card__meta">
-                <span>Управление</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Управление</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
               <h3>Когда отделу продаж нужен аудит</h3>
               <p>
                 Какие сигналы говорят о системной проблеме и какие вопросы стоит
                 задать до начала изменений.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="analytics">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="analytics"
+            >
               <div class="knowledge-card__meta">
-                <span>Аналитика</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Аналитика</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
               <h3>Какие показатели помогают управлять воронкой</h3>
               <p>
                 Как связать цифры в отчётах с действиями команды и увидеть, где
                 теряются сделки.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="team">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="team"
+            >
               <div class="knowledge-card__meta">
-                <span>Команда</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Команда</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
               <h3>Как договориться о ролях в отделе продаж</h3>
               <p>
                 Что стоит определить заранее, чтобы задачи не терялись между
                 руководителем и менеджерами.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="management">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="management"
+            >
               <div class="knowledge-card__meta">
-                <span>Управление</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Управление</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
               <h3>Как передать управление продажами руководителю</h3>
               <p>
                 Какие полномочия, информация и рабочие договорённости помогают
                 делегированию.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="analytics">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="analytics"
+            >
               <div class="knowledge-card__meta">
-                <span>Аналитика</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Аналитика</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
-              <h3>Почему CRM не делает продажи прозрачными</h3>
+              <h3>Как использовать CRM для управления</h3>
               <p>
-                Чем наличие инструмента отличается от понятной системы учёта,
-                анализа и решений.
+                Какие данные собирать в CRM и как использовать их при разборе продаж.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
-            <a class="knowledge-card" href="statya/" data-knowledge-topic="team">
+            <a
+              class="knowledge-card"
+              href="statya/"
+              data-knowledge-topic="team"
+            >
               <div class="knowledge-card__meta">
-                <span>Команда</span><time datetime="2026-11-10" aria-label="Дата публикации: 10 ноября 2026 года">10.11.2026</time>
+                <span>Команда</span
+                ><time
+                  datetime="2026-11-10"
+                  aria-label="Дата публикации: 10 ноября 2026 года"
+                  >10.11.2026</time
+                >
               </div>
               <h3>Почему новые правила не приживаются</h3>
               <p>
                 Как учесть привычки команды и перевести согласованные изменения
                 в ежедневную практику.
               </p>
-              <span class="knowledge-card__footer"
-                >Читать статью</span
-              >
+              <span class="knowledge-card__footer">Читать статью</span>
             </a>
           </div>
         </div>
@@ -184,18 +252,16 @@
           <div>
             <h2>Продажи складываются<br />из связанных решений</h2>
             <p class="inner-lead">
-              В базе знаний рассматриваем отдел продаж целиком: от целей
-              бизнеса и воронки до ответственности людей и регулярного
-              управления.
+              В базе знаний рассматриваем отдел продаж целиком: от целей бизнеса
+              и воронки до ответственности людей и регулярного управления.
             </p>
             <p>
               Материалы помогут сформулировать вопросы к своей команде,
               подготовиться к аудиту и оценить, какие изменения нужны в
-              процессах. Сложные инструменты объясняем через рабочие
-              ситуации.
+              процессах. Сложные инструменты объясняем через рабочие ситуации.
             </p>
             <a class="button button--dark" href="../formaty-raboty/"
-              >Посмотреть форматы работы</a
+              >Форматы работы</a
             >
           </div>
         </div>
@@ -203,9 +269,10 @@
       <div data-include="../sections/request/request.html"></div>
     </main>
     <div data-include="../sections/footer/footer.html"></div>
-    <script src="../js/app.js"></script><script src="../js/decor-parallax.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/decor-parallax.js"></script>
     <script src="../js/knowledge.js"></script>
     <script src="../js/include-sections.js"></script>
-  <script src="../prototypes/hero/variants.js" defer></script>
+    <script src="../prototypes/hero/variants.js" defer></script>
   </body>
 </html>
