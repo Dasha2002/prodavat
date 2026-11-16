@@ -113,3 +113,19 @@ body > .breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; gap:10px
 body > .breadcrumbs a { color:var(--muted); }
 body > .breadcrumbs a:hover { color:var(--accent); }
 @media(max-width:600px) { body > .breadcrumbs { padding-block:16px; font-size:12px; } }
+
+/* One compact introduction above the two portraits. */
+.experts .section-heading { display:block; margin-bottom:20px; }
+.experts .section-heading .eyebrow { margin-bottom:16px; padding:0; }
+.experts .experts__intro { display:block; max-width:740px; margin:0 0 42px; }
+.experts .experts__intro-note { max-width:none; margin:0; font-size:18px; line-height:1.75; }
+/* The trail belongs to the opening content rather than a separate page row. */
+main .breadcrumbs, .interior-page main .breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; gap:8px; width:100%; margin:0 0 26px; padding:0; font-size:12px; line-height:1.6; color:var(--muted); background: none;}
+main .breadcrumbs a { color:inherit; }
+main .breadcrumbs a:hover { color:var(--accent); }
+.section-heading > .breadcrumbs { grid-column:1/-1; }
+.section-heading:has(> .breadcrumbs) { row-gap:20px; }
+.hero-editorial__panel .breadcrumbs { color:#3d4045; }
+@media(max-width:600px) { .experts .experts__intro-note { font-size:16px; } main .breadcrumbs, .interior-page main .breadcrumbs { margin-bottom:22px; font-size:11px; } }
+
+.interior-page main .section-heading > .breadcrumbs { margin-bottom:0; }

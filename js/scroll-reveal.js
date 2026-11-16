@@ -4,7 +4,7 @@ document.addEventListener('sections:loaded', () => {
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
   const selector = [
     '.section-heading', '.tasks__rows article', '.outcomes h2', '.outcomes__list article',
-    '.experts__photo', '.experts__statement', '.cases__visual', '.cases__chapters li',
+    '.experts__card', '.cases__visual', '.cases__chapters li',
     '.inner-story>div>h2', '.inner-aside__photo', '.inner-choice__collage',
     '.inner-duet__photo', '.inner-principles article', '.inner-lines article', '.inner-next>div'
   ].join(',');
@@ -19,12 +19,13 @@ document.addEventListener('sections:loaded', () => {
       observer.unobserve(element);
       if (reducedMotion.matches) return;
       const photo = element.matches('figure,.cases__visual,.inner-choice__collage');
+      const portraitCard = element.matches('.experts__card');
       const order = Number(element.dataset.revealOrder) || 0;
       const frames = photo
         ? [{opacity:.55,transform:'translate3d(0,22px,0)',clipPath:'inset(0 0 4% 0)'}, {opacity:1,transform:'translate3d(0,0,0)',clipPath:'inset(0 0 0% 0)'}]
         : [{opacity:.2,transform:'translate3d(0,18px,0)'}, {opacity:1,transform:'translate3d(0,0,0)'}];
       const animation = element.animate(frames, {
-        duration:photo ? 800 : 620,
+        duration:photo || portraitCard ? 800 : 620,
         delay:Math.min(order * 55,110),
         easing:'cubic-bezier(.22,1,.36,1)',
         fill:'backwards'

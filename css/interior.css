@@ -80,7 +80,7 @@
 .inner-facts article+article { border-top:1px solid #cbc6ce; margin-top:24px; padding-top:24px; }
 .inner-facts h3 { font-size:24px; }
 .inner-facts p { margin-top:12px; }
-.inner-next { display:flex; justify-content:space-between; align-items:center; gap:64px; }
+.inner-next { display:flex; justify-content:space-between; align-items:flex-end; gap:64px; }
 .inner-next h2 { margin-top:24px; }
 .inner-next p { max-width:650px; }
 .inner-next>.button { flex-shrink:0; text-align:center; }
