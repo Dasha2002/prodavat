@@ -159,9 +159,9 @@
 .order__chip span { font: 400 13px/1 var(--body); color: var(--accent); font-variant-numeric: tabular-nums; }
 .order__foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px 56px; flex-wrap: wrap; margin-top: 48px; }
 .order__lead { max-width: 52ch; color: var(--muted); }
-.order h1, .order .eyebrow, .order__foot { transition: opacity 500ms ease-out 450ms, transform 600ms cubic-bezier(.23,1,.32,1) 450ms; }
+.order h1, .order .breadcrumbs, .order__foot { transition: opacity 500ms ease-out 450ms, transform 600ms cubic-bezier(.23,1,.32,1) 450ms; }
 .order:not(.is-ordered) .order__chip { transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--r, 0deg)) scale(1.2); transition: none; }
-.order:not(.is-ordered) :is(h1, .eyebrow, .order__foot) { opacity: 0; transform: translateY(12px); transition: none; }
+.order:not(.is-ordered) :is(h1, .breadcrumbs, .order__foot) { opacity: 0; transform: translateY(12px); transition: none; }
 .order.is-measuring, .order.is-measuring * { transition: none !important; }
 
 /* 7. Рычаг */

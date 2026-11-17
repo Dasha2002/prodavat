@@ -120,12 +120,15 @@ body > .breadcrumbs a:hover { color:var(--accent); }
 .experts .experts__intro { display:block; max-width:740px; margin:0 0 42px; }
 .experts .experts__intro-note { max-width:none; margin:0; font-size:18px; line-height:1.75; }
 /* The trail belongs to the opening content rather than a separate page row. */
-main .breadcrumbs, .interior-page main .breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; gap:8px; width:100%; margin:0 0 26px; padding:0; font-size:12px; line-height:1.6; color:var(--muted); background: none;}
+main .breadcrumbs, .interior-page main .breadcrumbs { display:flex; flex-wrap:wrap; align-items:center; gap:8px; width:100%; margin:0; padding:0; font-size:13px; font-weight:500; letter-spacing:.08em; line-height:1.5; text-transform:uppercase; color:var(--accent); background:none; }
 main .breadcrumbs a { color:inherit; }
-main .breadcrumbs a:hover { color:var(--accent); }
+main .breadcrumbs a:hover, main .breadcrumbs a:focus-visible { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
 .section-heading > .breadcrumbs { grid-column:1/-1; }
 .section-heading:has(> .breadcrumbs) { row-gap:20px; }
-.hero-editorial__panel .breadcrumbs { color:#3d4045; }
-@media(max-width:600px) { .experts .experts__intro-note { font-size:16px; } main .breadcrumbs, .interior-page main .breadcrumbs { margin-bottom:22px; font-size:11px; } }
+.interior-page main .hero-editorial__panel .breadcrumbs { margin-bottom:48px; font-size:11px; letter-spacing:.1em; line-height:1.6; color:#4c4243; }
+.interior-page main.simple-page .breadcrumbs { margin-bottom:24px; }
+@media(max-width:1100px) { .interior-page main .hero-editorial__panel .breadcrumbs { margin-bottom:44px; font-size:10px; } }
+@media(max-width:700px) { .interior-page main .hero-editorial__panel .breadcrumbs { margin-bottom:24px; } }
+@media(max-width:600px) { .experts .experts__intro-note { font-size:16px; } main .breadcrumbs, .interior-page main .breadcrumbs { font-size:12px; } }
 
 .interior-page main .section-heading > .breadcrumbs { margin-bottom:0; }
