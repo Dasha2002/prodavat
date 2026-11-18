@@ -1,5 +1,5 @@
 document.addEventListener('sections:loaded', () => {
-  if (!['home','about','formats','practice'].includes(document.body.dataset.page)) return;
+  if (!['home','formats','practice'].includes(document.body.dataset.page)) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
   const selector = [

@@ -43,6 +43,7 @@ document.addEventListener('sections:loaded', () => {
 
 // Subtle portrait movement: text and card positions remain stable.
 document.addEventListener('sections:loaded', () => {
+ if (document.body.dataset.page === 'about') return;
  const photos = [...document.querySelectorAll('[data-expert-portrait]')];
  if (!photos.length) return;
  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
